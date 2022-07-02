@@ -1,0 +1,30 @@
+@import '../../../assets/styles/variables.scss';
+
+.sub-div {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.wave {
+    background: url('../../../assets/svgs/wave.svg') no-repeat center center fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 300px;
+}
+
+.landing-logo {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    z-index: 1;
+}
+
+.text-logo {
+    font-family: 'Iceberg';
+    font-style: normal;
+    color: $light-color;
+    font-weight: 400;
+    font-size: 3rem;
+}
