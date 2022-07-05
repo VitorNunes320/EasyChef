@@ -16,7 +16,12 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
-const pages = ["Home", "Sobre", "Opção 1", "Opção 2"];
+const pages: any = [
+  {name: "Home", route: "/"},
+  {name: "Sobre", route: "/"},
+  {name: "Opção 1", route: "/"},
+  {name: "Opção 2", route: "/"}
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Header = () => {
@@ -64,7 +69,7 @@ const Header = () => {
               textAlign: "center",
             }}>
             <Logo height={"45px"} width={"45px"} />
-            <p className="m-auto">&nbsp;&nbsp;EasyChef</p>
+            <p className="m-auto">&nbsp;&nbsp;Easy Chef</p>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -94,20 +99,20 @@ const Header = () => {
               sx={{
                 display: { xs: "block", md: "none" },
               }}>
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography className="menu-link">{page}</Typography>
+              {pages.map((page : any) => (
+                <MenuItem key={page.name} onClick={handleCloseNavMenu} href={page.route}>
+                  <Typography className="menu-link">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page: any) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.name}
+                onClick={handleCloseNavMenu} href={page.route}
                 sx={{ my: 2, color: "white", display: "block" }}>
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>

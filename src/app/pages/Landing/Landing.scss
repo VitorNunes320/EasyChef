@@ -16,15 +16,62 @@
 
 .landing-logo {
     position: absolute;
-    bottom: 3rem;
-    left: 3rem;
+    bottom: 1rem;
+    left: 1rem;
     z-index: 1;
 }
 
-.text-logo {
+.landing-text-logo {
     font-family: 'Iceberg';
     font-style: normal;
     color: $light-color;
     font-weight: 400;
     font-size: 3rem;
+    margin: auto 0 !important;
+}
+
+.text-landing {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 250%;
+    line-height: 2.75rem;
+    color: $light-color;
+}
+
+.subtext-landing {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 200%;
+    line-height: 2.125rem;
+    color: $light-color;
+}
+
+@media (max-width: 1920px) {
+    .logo {
+        height: 25%;
+        width: 25%;
+    }
+}
+
+@media (max-width: 1366px) {
+    .logo {
+        height: 15%;
+        width: 15%;
+    }
+
+    .landing-text-logo {
+        font-size: 2rem;
+    }
+}
+
+.cell {
+    transform: rotate(-22deg);
+    z-index: 2;
+}
+
+.graphic {
+    transform: rotate(-30deg);
+    z-index: 1;
 }
