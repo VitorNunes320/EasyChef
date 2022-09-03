@@ -1,8 +1,7 @@
 import React from "react";
 import './Landing.scss';
 import { ReactComponent as Logo } from "../../../assets/svgs/logo.svg";
-import { ReactComponent as Wave } from "../../../assets/svgs/wave.svg";
-import { ReactComponent as Cell } from "../../../assets/svgs/cell.svg";
+import { ReactComponent as Phone } from "../../../assets/svgs/phone.svg";
 import { ReactComponent as Graphic } from "../../../assets/svgs/graphic.svg";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
@@ -11,7 +10,7 @@ export default function Landing() {
     return (
         <>
             <div className="img-background d-flex align-items-center">
-                <Wave className="sub-div w-100" />
+                <div className="dark sub-div w-100"></div>
 
                 <div className="container">
                     <div className="row">
@@ -39,8 +38,7 @@ export default function Landing() {
                     <Typography
                         variant="h6"
                         noWrap
-                        component="a"
-                        href="/"
+                        component="div"
                         sx={{
                         mr: 2,
                         display: { xs: "none", md: "flex" },
@@ -60,9 +58,8 @@ export default function Landing() {
                 </div>
             </div>
             <div>
-                <div className="container">
-                    <Cell className="cell"/>
-                    <Graphic className="graphic"/>
+                <div className="container py-5">
+                    <Phone className="cell"/>
                 </div>
             </div>
         </>

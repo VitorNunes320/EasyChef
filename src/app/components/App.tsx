@@ -5,6 +5,8 @@ import Login from '../pages/Login/Login';
 import Landing from '../pages/Landing/Landing';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import Dash from '../pages/Dash/Dash';
+import NotFound from '../pages/NotFound/NotFound';
 
 function App() {
     return (
@@ -17,6 +19,8 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Landing/>}/>
                     <Route path='/login' element={<Login/>}/>
+                    <Route path='/dashboard' element={<Dash/>}/>
+                    <Route path='*' element={<NotFound/>}/>
                 </Routes>
             </main>
 
