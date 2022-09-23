@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LandingComponent } from './components/landing/landing.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+
+
+
+@NgModule({
+  declarations: [
+    LandingComponent,
+    DashboardComponent
+  ],
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule
+  ]
+})
+export class InicioModule { }

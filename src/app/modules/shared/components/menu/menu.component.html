@@ -1,0 +1,35 @@
+
+<mat-toolbar class="fixed-top">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="logo">
+      <img src="../../../../assets/images/icons/easy-chef-logo.svg" alt="icon" width="45px" height="45px">&nbsp;Easy Chef
+    </span>
+    <span class="menu-spacer"></span>
+    <div fxShow="true" fxHide.lt-md>
+      <a href="#" mat-button>Home</a>
+      <a href="#" mat-button>Opção 1</a>
+      <a href="#" mat-button>Opção 2</a>
+      <a href="#" mat-button>Opção 3</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <a href="#" mat-button>Home</a>
+      <a href="#" mat-button>Opção 1</a>
+      <a href="#" mat-button>Opção 2</a>
+      <a href="#" mat-button>Opção 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

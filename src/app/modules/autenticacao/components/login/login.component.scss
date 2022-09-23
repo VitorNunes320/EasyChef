@@ -1,0 +1,24 @@
+@import '/src/assets/styles/variables.scss';
+
+.auth-background {
+  width: 100%;
+  background: url("../../../../assets/images/login-background.png") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.dark-card {
+  background-color: $color-dark-blue;
+  padding: 30px;
+  margin: auto;
+  border: 4px solid $color-dark-card-border;
+  border-radius: 15px;
+  max-width: 500px;
+  height: 430px;
+}
+
+.light-button {
+  border: 2px $color-light-button solid;
+  border-radius: 10px;
+  height: 40px;
+}
