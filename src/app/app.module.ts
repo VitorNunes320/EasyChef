@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpLoaderFactory } from './modules/shared/services/http-loader.service';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +12,9 @@ import { tokenInterceptorProviders } from './modules/shared/services/token-inter
 import { SnackbarComponent } from './modules/shared/components/snackbar/snackbar.component';
 import { GuardService } from './modules/shared/services/guard.service';
 import { FormBuilder } from '@angular/forms';
+import { PedidoModule } from './modules/pedido/pedido.module';
+import { PreparacaoModule } from './modules/preparacao/preparacao.module';
+import { RelatorioModule } from './modules/relatorio/relatorio.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,9 @@ import { FormBuilder } from '@angular/forms';
     AutenticacaoModule,
     SharedModule,
     InicioModule,
+    PedidoModule,
+    PreparacaoModule,
+    RelatorioModule
   ],
   providers: [
     FormBuilder,

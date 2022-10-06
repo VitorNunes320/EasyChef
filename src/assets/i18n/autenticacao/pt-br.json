@@ -1,3 +1,15 @@
 {
-  "lembreDeMim": "Lembre-se de mim"
+  "lembreDeMim": "Lembre-se de mim",
+  "crieUma": "Crie uma",
+  "naoTemUmaConta": "Não tem uma conta?",
+  "senha": "Senha",
+  "email": "E-mail",
+  "entrar": "Entrar",
+  "ultimasAcoesDosUsuarios": "Últimas ações dos usuários",
+  "indicesDeVendas": "Indices de venda",
+  "relatorioAnualDeVendas": "Relatório Anual de Vendas",
+  "vendas": "Vendas",
+  "visaoGeralDasVendas": "Visão geral das vendas",
+  "funcionario": "Funcionário",
+  "codigo": "Código"
 }

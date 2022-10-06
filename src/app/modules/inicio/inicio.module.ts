@@ -12,7 +12,9 @@ import { NgApexchartsModule } from "ng-apexcharts";
 import { TopCardsComponent } from './components/top-cards/top-cards.component';
 import { VendasCardComponent } from './components/vendas-card/vendas-card.component';
 import { FeedsComponent } from './components/feeds/feeds.component';
-
+import { HttpClient } from '@angular/common/http';
+import { HttpLoaderFactory } from '../shared/services/http-loader.service';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,13 @@ import { FeedsComponent } from './components/feeds/feeds.component';
     FormsModule,
     ReactiveFormsModule,
     NgApexchartsModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    }),
   ]
 })
 export class InicioModule { }
