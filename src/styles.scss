@@ -22,3 +22,15 @@ body {
 .light-link {
   color: $color-light-button;
 }
+
+.dark-card {
+  background-color: $color-dark-blue;
+  padding: 30px;
+  margin: auto;
+  border: 4px solid $color-dark-card-border;
+  border-radius: 15px;
+}
+
+table, th {
+  color: $color-light !important;
+}

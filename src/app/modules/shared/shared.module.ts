@@ -8,11 +8,17 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
-import { routes } from '../app-routing.module';
+import { routes } from 'src/app/app-routing.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuthTemplateComponent } from './components/auth-template/auth-template.component';
+import { DefaultTemplateComponent } from './components/default-template/default-template.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
-    MenuComponent
+    MenuComponent,
+    AuthTemplateComponent,
+    DefaultTemplateComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +28,9 @@ import { routes } from '../app-routing.module';
     MatIconModule,
     MatToolbarModule,
     FlexLayoutModule,
+    MatSnackBarModule,
+    MatMenuModule,
     RouterModule.forRoot(routes),
-  ]
+  ],
 })
 export class SharedModule { }
