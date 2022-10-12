@@ -1,1 +1,122 @@
-<p>preparacao works!</p>
+<div class="row">
+    <div class="col-12 col-lg-3 col-md-4 col-sm-6 p-3">
+        <div class="prepare-title-list blue px-2 py-3">
+            Em Aberto
+        </div>
+        <div class="prepare-background-list p-2">
+            <ng-container *ngFor="let item of preparacao">
+                <div class="dark-card status-bar blue" *ngIf="item.status == 0">
+                    <div class="card-header">Pedido: {{ item.codigo }}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.data | date: 'dd/MM/yyyy HH:mm' }}</h5>
+                        <hr>
+                        <div class="card-text">
+                            <ul class="item-list">
+                                <li *ngFor="let produto of item.itens">
+                                    {{ produto.nome }}
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="pb-2" *ngIf="item.observacoes">
+                            Observações: {{ item.observacoes }}
+                        </div>
+                        <div class="text-end">
+                            <a href="#" class="btn btn-primary">Ok</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="col-12 col-lg-3 col-md-4 col-sm-6 p-3">
+        <div class="prepare-title-list orange px-2 py-3">
+            Em Preparo
+        </div>
+        <div class="prepare-background-list p-2">
+            <ng-container *ngFor="let item of preparacao">
+                <div class="dark-card status-bar orange" *ngIf="item.status == 1">
+                    <div class="card-header">Pedido: {{ item.codigo }}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.data | date: 'dd/MM/yyyy HH:mm' }}</h5>
+                        <hr>
+                        <div class="card-text">
+                            <ul class="item-list">
+                                <li *ngFor="let produto of item.itens">
+                                    {{ produto.nome }}
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="pb-2" *ngIf="item.observacoes">
+                            Observações: {{ item.observacoes }}
+                        </div>
+                        <div class="text-end">
+                            <a href="#" class="btn btn-primary">Ok</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="col-12 col-lg-3 col-md-4 col-sm-6 p-3">
+        <div class="prepare-title-list green px-2 py-3">
+            Entregue
+        </div>
+        <div class="prepare-background-list p-2">
+            <ng-container *ngFor="let item of preparacao">
+                <div class="dark-card status-bar green" *ngIf="item.status == 2">
+                    <div class="card-header">Pedido: {{ item.codigo }}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.data | date: 'dd/MM/yyyy HH:mm' }}</h5>
+                        <hr>
+                        <div class="card-text">
+                            <ul class="item-list">
+                                <li *ngFor="let produto of item.itens">
+                                    {{ produto.nome }}
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="pb-2" *ngIf="item.observacoes">
+                            Observações: {{ item.observacoes }}
+                        </div>
+                        <div class="text-end">
+                            <a href="#" class="btn btn-primary">Ok</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="col-12 col-lg-3 col-md-4 col-sm-6 p-3">
+        <div class="prepare-title-list red px-2 py-3">
+            Cancelado
+        </div>
+        <div class="prepare-background-list p-2">
+            <ng-container *ngFor="let item of preparacao">
+                <div class="dark-card status-bar red" *ngIf="item.status == 3">
+                    <div class="card-header">Pedido: {{ item.codigo }}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.data | date: 'dd/MM/yyyy HH:mm' }}</h5>
+                        <hr>
+                        <div class="card-text">
+                            <ul class="item-list">
+                                <li *ngFor="let produto of item.itens">
+                                    {{ produto.nome }}
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="pb-2" *ngIf="item.observacoes">
+                            Observações: {{ item.observacoes }}
+                        </div>
+                        <div class="text-end">
+                            <a href="#" class="btn btn-primary">Ok</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

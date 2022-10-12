@@ -1,0 +1,53 @@
+.status-bar {
+    border: unset;
+    border-top: solid 16px;
+    &.blue {
+        border-top-color: blue;
+    }
+
+    &.orange {
+        border-top-color: orange;
+    }
+
+    &.green {
+        border-top-color: green;
+    }
+
+    &.red {
+        border-top-color: red;
+    }
+}
+
+.item-list {
+    max-height: 6rem;
+    min-height: 6rem;
+    overflow-y: scroll;
+}
+
+.prepare-title-list {
+    font-size: 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    &.blue {
+       background-color: blue;
+    }
+
+    &.orange {
+       background-color: orange;
+    }
+
+    &.green {
+       background-color: green;
+    }
+
+    &.red {
+       background-color: red;
+    }
+}
+
+.prepare-background-list {
+    background-color: #00000067;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
