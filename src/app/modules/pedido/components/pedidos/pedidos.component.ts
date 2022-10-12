@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Pedido } from '../../models/pedido.model';
 import { PedidoService } from '../../services/pedido.service';
 
@@ -11,7 +11,9 @@ export class PedidosComponent implements OnInit {
   public pagina: number = 1;
   public quantidade: number = 15;
   public paginas: number = 15;
+  public viewTipo: number = 0;
 
+  @Output() emitPedidos: EventEmitter<Pedido[]> = new EventEmitter();
   public pedidos: Pedido[] = [
     { 
       id: '', 
@@ -337,7 +339,9 @@ export class PedidosComponent implements OnInit {
 
   constructor(
     private readonly pedidoService: PedidoService
-    ) { }
+    ) { 
+    this.emitPedidos.emit(this.pedidos);
+  }
 
   ngOnInit(): void {
   }

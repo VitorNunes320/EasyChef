@@ -11,10 +11,16 @@ import { HttpClient } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { PedidosCardComponent } from './components/pedidos-card/pedidos-card.component';
+import { PedidosTabelaComponent } from './components/pedidos-tabela/pedidos-tabela.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
-    PedidosComponent
+    PedidosComponent,
+    PedidosCardComponent,
+    PedidosTabelaComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +31,8 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
+    MatButtonToggleModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,

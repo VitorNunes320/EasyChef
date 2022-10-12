@@ -1,7 +1,8 @@
-<div class="container-fluid py-2">
+<div class="main-title pb-3">{{ "preparacao" | translate }}</div>
+<div class="container-fluid p-0 py-2">
     <div class="d-flex flex-row flex-nowrap">
-        <div class="col-12 col-xl-3 col-lg-4 col-md-5 col-sm-6 p-3">
-            <div class="prepare-title-list blue px-2 py-3">Em Aberto</div>
+        <div class="col-12 col-xl-3 col-lg-4 col-md-5 col-sm-6">
+            <div class="prepare-title-list blue px-2 py-3">{{ "naoIniciado" | translate }}</div>
             <div class="prepare-background-list p-2">
                 <ng-container *ngFor="let item of preparacao">
                     <div class="dark-card mb-2 status-bar blue" *ngIf="item.status == 0">
@@ -30,8 +31,8 @@
                 </ng-container>
             </div>
         </div>
-        <div class="col-12 col-xl-3 col-lg-4 col-md-5 col-sm-6 p-3">
-            <div class="prepare-title-list orange px-2 py-3">Em Preparo</div>
+        <div class="col-12 col-xl-3 col-lg-4 col-md-5 col-sm-6 px-3">
+            <div class="prepare-title-list orange px-2 py-3">{{ "emPreparacao" | translate }}</div>
             <div class="prepare-background-list p-2">
                 <ng-container *ngFor="let item of preparacao">
                     <div class="dark-card mb-2 status-bar orange" *ngIf="item.status == 1">
@@ -60,8 +61,8 @@
                 </ng-container>
             </div>
         </div>
-        <div class="col-12 col-xl-3 col-lg-4 col-md-5 col-sm-6 p-3">
-            <div class="prepare-title-list green px-2 py-3">Entregue</div>
+        <div class="col-12 col-xl-3 col-lg-4 col-md-5 col-sm-6">
+            <div class="prepare-title-list green px-2 py-3">{{ "entregue" | translate }}</div>
             <div class="prepare-background-list p-2">
                 <ng-container *ngFor="let item of preparacao">
                     <div class="dark-card mb-2 status-bar green" *ngIf="item.status == 2">

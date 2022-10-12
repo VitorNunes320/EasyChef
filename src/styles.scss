@@ -136,3 +136,48 @@ mat-progress-spinner.spinner {
   background-color: $color-dark-blue;
   box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
 }
+
+table {
+  box-shadow: 0px 3px 6px rgba(96, 125, 139, 0.1);
+  background-color: $color-dark-blue !important;
+
+  thead {
+    background-color: $color-dark-blue-checked !important;
+    tr th {
+      font-size: 18px !important;
+    }
+  }
+  
+  th {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    color: $color-dark-blue;
+    border-bottom: 1px solid $color-light;
+
+    .info {
+      font-size: 13px;
+    }
+
+    &.mat-header-cell {
+      padding: 20px;
+    }
+  }
+
+  td.mat-cell {
+    padding: 16px 20px;
+    height: 75px;
+  }
+
+  border-collapse: collapse;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+mat-button-toggle {
+  background-color: $color-dark-blue !important;
+  &.mat-button-toggle-checked {
+      background-color: $color-dark-blue-checked !important;
+  }
+}
