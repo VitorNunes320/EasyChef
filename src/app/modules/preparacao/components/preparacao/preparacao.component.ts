@@ -10,7 +10,11 @@ import { PreparacaoService } from '../../service/preparacao.service';
 export class PreparacaoComponent implements OnInit {
   public preparacao: Preparacao[] = [
     { id: '1', codigo: '1', status: 0, mesaId: '1', mesaNome: 'Mesa 01', data: new Date(), itens: [{ id: '1', foto: '', nome: 'Hamburguer'}], observacoes: 'Sem cebola'},
+    { id: '1', codigo: '1', status: 1, mesaId: '1', mesaNome: 'Mesa 01', data: new Date(), itens: [{ id: '1', foto: '', nome: 'Hamburguer'}], observacoes: 'Sem cebola'},
+    { id: '1', codigo: '1', status: 1, mesaId: '1', mesaNome: 'Mesa 01', data: new Date(), itens: [{ id: '1', foto: '', nome: 'Hamburguer'}], observacoes: 'Sem cebola'},
     { id: '2', codigo: '2', status: 1, mesaId: '2', mesaNome: 'Mesa 02', data: new Date(), itens: [
+      { id: '1', foto: '', nome: 'Hamburguer'},
+      { id: '1', foto: '', nome: 'Hamburguer'},
       { id: '1', foto: '', nome: 'Hamburguer'},
       { id: '1', foto: '', nome: 'Hamburguer'},
       { id: '1', foto: '', nome: 'Hamburguer'},

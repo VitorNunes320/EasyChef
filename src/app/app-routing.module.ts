@@ -5,12 +5,13 @@ import { RegistroComponent } from './modules/autenticacao/components/registro/re
 import { DashboardComponent } from './modules/inicio/components/dashboard/dashboard.component';
 import { LandingComponent } from './modules/inicio/components/landing/landing.component';
 import { PedidosComponent } from './modules/pedido/components/pedidos/pedidos.component';
+import { PreparacaoComponent } from './modules/preparacao/components/preparacao/preparacao.component';
 import { AuthTemplateComponent } from './modules/shared/components/auth-template/auth-template.component';
 import { DefaultTemplateComponent } from './modules/shared/components/default-template/default-template.component';
 import { MenuComponent } from './modules/shared/components/menu/menu.component';
 
 export const routes: Routes = [
-
+  { path: "", pathMatch: "full", redirectTo: "login" },
   { path: '', component: AuthTemplateComponent,
     children: [
       { path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ export const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'pedidos', component: PedidosComponent },
+      { path: 'preparacao', component: PreparacaoComponent },
     ]
   },
 ];
