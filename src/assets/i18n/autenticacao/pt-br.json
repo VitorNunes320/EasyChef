@@ -11,5 +11,22 @@
   "vendas": "Vendas",
   "visaoGeralDasVendas": "Visão geral das vendas",
   "funcionario": "Funcionário",
-  "codigo": "Código"
+  "codigo": "Código",
+  "pedidos": "Pedidos",
+  "preparacao": "Preparação",
+  "relatorios": "Relatórios",
+  "clientes": "Clientes",
+  "listaPedidos": "Lista de Pedidos",
+  "preparacaoPedidos": "Preparação de Pedidos",
+  "relatorioPedidos": "Relatórios de Pedidos",
+  "listaClientes": "Lista de Clientes",
+  "pedido": "Pedido",
+  "qtd": "Qtd",
+  "itens": "Itens",
+  "entregue": "Entregue",
+  "emPreparacao": "Em Preparação",
+  "naoIniciado": "Não Iniciado",
+  "cancelado": "Cancelado",
+  "detalhes": "Detalhes",
+  "novidades": "Novidades"
 }

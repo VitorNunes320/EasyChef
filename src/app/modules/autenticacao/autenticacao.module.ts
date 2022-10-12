@@ -37,7 +37,7 @@ import { HttpClient } from '@angular/common/http';
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-    }),
+    }), 
   ]
 })
 export class AutenticacaoModule { }

@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
           this.mensagemErro = "";
           if (response.dados) {
             this.storageService.salvarUsuario(response.dados, this.loginData.lembreDeMim);
-            this.router.navigate(['/paineis']);
+            this.router.navigate(['/dashboard']);
             this.snackbarComponent.openSnackBar(response.mensagem, SnackBarTheme.success, 3000);
           }
         }

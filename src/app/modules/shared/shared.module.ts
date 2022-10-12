@@ -14,6 +14,10 @@ import { AuthTemplateComponent } from './components/auth-template/auth-template.
 import { DefaultTemplateComponent } from './components/default-template/default-template.component';
 import { MatMenuModule } from '@angular/material/menu';
 
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpLoaderFactory } from '../shared/services/http-loader.service';
+import { HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     MenuComponent,
@@ -31,6 +35,13 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSnackBarModule,
     MatMenuModule,
     RouterModule.forRoot(routes),
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    }),
   ],
 })
 export class SharedModule { }

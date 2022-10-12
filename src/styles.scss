@@ -9,6 +9,19 @@ body {
   background: url("./assets/images/icons/food-background.svg") repeat center center;
 }
 
+.light-button {
+  border: 2px $color-light-button solid;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.blue-button {
+  background-color: $color-blue;
+  color: $color-light;
+  border-radius: 10px;
+  height: 40px;
+}
+
 .logo {
   font-family: 'Iceberg';
   font-style: normal;
@@ -33,4 +46,93 @@ body {
 
 table, th {
   color: $color-light !important;
+}
+
+mat-progress-spinner.spinner {
+  position: fixed;
+  z-index: 999;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  circle {
+    stroke: $color-gold;
+  }
+}
+
+.main-title {
+  font-family: 'Segoe UI', bold;
+  font-size: 2rem;
+  color: $color-light;
+  font-weight: bold;
+  width: fit-content;
+}
+
+// scroll bar
+::-webkit-scrollbar {
+  display: block;
+  width: 16px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.6);
+  border: 1px solid hsla(0,0%,96%,.251);
+  border-radius: 24px;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+.paginator {
+  padding: 1rem;
+
+  .pages {
+    text-align: center;
+    color: $color-light;
+    margin-right: 40px;
+    font-weight: bold;
+  }
+
+  .items {
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-light;
+    margin: 0 18px;
+
+    mat-form-field {
+      width: 3rem; 
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  button {
+    background-color: $color-light;
+    border-radius: 6px;
+    font-weight: 600;
+    color: $color-dark-blue;
+    width: fit-content !important;
+    height: 20px;
+    mat-icon {
+      font-size: 20px;
+      margin: -24px 0px 0px 0px;
+      width: fit-content;
+    }
+  }
+}
+
+.mat-toolbar {
+  background-color: $color-dark-blue;
+  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
 }
