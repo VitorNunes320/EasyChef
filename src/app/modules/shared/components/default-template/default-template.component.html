@@ -18,7 +18,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <ng-container *ngFor="let link of item.links">
-                <a class="dropdown-item" [href]="link.link">{{ link.nome | translate }}</a>
+                <a class="dropdown-item" [routerLink]="link.link">{{ link.nome | translate }}</a>
               </ng-container>
             </div>
           </li>
@@ -34,10 +34,18 @@
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>close</mat-icon>
       </button>
-      <a mat-button>Pedidos</a>
-      <a mat-button>Preparação</a>
-      <a mat-button>Relatórios</a>
-      <a mat-button>Cliente</a>
+      <ng-container *ngFor="let item of headerItens">
+        <li class="dropdown h-100">
+          <a class="nav-link dropdown-toggle h-100 d-flex align-items-center" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <mat-icon>expand_more</mat-icon> {{ item.nome | translate }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <ng-container *ngFor="let link of item.links">
+              <a class="dropdown-item" [routerLink]="link.link">{{ link.nome | translate }}</a>
+            </ng-container>
+          </div>
+        </li>
+      </ng-container>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="content">
