@@ -4,11 +4,13 @@ import { PreparacaoComponent } from './components/preparacao/preparacao.componen
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory } from '../shared/services/http-loader.service';
 import { HttpClient } from '@angular/common/http';
+import { DetalhesPreparacaoModalComponent } from './components/modals/detalhes-preparacao-modal/detalhes-preparacao-modal.component';
 
 
 @NgModule({
   declarations: [
-    PreparacaoComponent
+    PreparacaoComponent,
+    DetalhesPreparacaoModalComponent
   ],
   imports: [
     CommonModule,

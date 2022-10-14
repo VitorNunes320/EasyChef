@@ -15,12 +15,16 @@ import { PedidosCardComponent } from './components/pedidos-card/pedidos-card.com
 import { PedidosTabelaComponent } from './components/pedidos-tabela/pedidos-tabela.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { NovoPedidoModalComponent } from './components/modals/novo-pedido-modal/novo-pedido-modal.component';
+import { DetalhesPedidoModelComponent } from './components/modals/detalhes-pedido-model/detalhes-pedido-model.component';
 
 @NgModule({
   declarations: [
     PedidosComponent,
     PedidosCardComponent,
-    PedidosTabelaComponent
+    PedidosTabelaComponent,
+    NovoPedidoModalComponent,
+    DetalhesPedidoModelComponent
   ],
   imports: [
     CommonModule,

@@ -15,6 +15,7 @@ import { FormBuilder } from '@angular/forms';
 import { PedidoModule } from './modules/pedido/pedido.module';
 import { PreparacaoModule } from './modules/preparacao/preparacao.module';
 import { RelatorioModule } from './modules/relatorio/relatorio.module';
+import { ReceitaModule } from './modules/receita/receita.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RelatorioModule } from './modules/relatorio/relatorio.module';
     InicioModule,
     PedidoModule,
     PreparacaoModule,
-    RelatorioModule
+    RelatorioModule,
+    ReceitaModule
   ],
   providers: [
     FormBuilder,
