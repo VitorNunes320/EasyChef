@@ -6,6 +6,8 @@ import { DashboardComponent } from './modules/inicio/components/dashboard/dashbo
 import { LandingComponent } from './modules/inicio/components/landing/landing.component';
 import { PedidosComponent } from './modules/pedido/components/pedidos/pedidos.component';
 import { PreparacaoComponent } from './modules/preparacao/components/preparacao/preparacao.component';
+import { IngredientesComponent } from './modules/receita/components/ingredientes/ingredientes.component';
+import { ReceitaComponent } from './modules/receita/components/receita/receita.component';
 import { AuthTemplateComponent } from './modules/shared/components/auth-template/auth-template.component';
 import { DefaultTemplateComponent } from './modules/shared/components/default-template/default-template.component';
 import { MenuComponent } from './modules/shared/components/menu/menu.component';
@@ -24,6 +26,8 @@ export const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'pedidos', component: PedidosComponent },
       { path: 'preparacao', component: PreparacaoComponent },
+      { path: 'ingredientes', component: IngredientesComponent },
+      { path: 'receitas', component: ReceitaComponent },
     ]
   },
 ];

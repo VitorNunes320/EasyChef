@@ -340,7 +340,6 @@ export class PedidosComponent implements OnInit {
   constructor(
     private readonly pedidoService: PedidoService
     ) { 
-    this.emitPedidos.emit(this.pedidos);
   }
 
   ngOnInit(): void {

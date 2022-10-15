@@ -1,1 +1,43 @@
-<p>nova-receita-modal works!</p>
+<header mat-dialog-title class="d-flex justify-content-between pb-2">
+    <h1>{{ "novaReceita" | translate }}</h1>
+    <mat-icon class="close" mat-dialog-close>close</mat-icon>
+</header>
+
+<mat-dialog-content>
+    <form [formGroup]="receitaForm">
+        <app-seletor-imagem (fileEvent)="addFile($event)"></app-seletor-imagem>
+        <hr>
+        <div class="row">
+            <mat-form-field appearance="outline" class="col-12 col-sm-8">
+                <mat-label>{{ "nome" | translate }}</mat-label>
+                <input matInput type="text" id="nome" formControlName="nome">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12 col-sm-4">
+                <mat-label>{{ "unidadeMedida" | translate }}</mat-label>
+                <input matInput type="text" id="unidadeMedida" formControlName="unidadeMedida">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12 col-sm-4">
+                <mat-label>{{ "peso" | translate }}</mat-label>
+                <input matInput type="text" id="peso" formControlName="peso">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12 col-sm-4">
+                <mat-label>{{ "kcal" | translate }}</mat-label>
+                <input matInput type="text" id="kcal" formControlName="kcal">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12 col-sm-4">
+                <mat-label>{{ "valor" | translate }}</mat-label>
+                <input matInput type="text" id="valor" formControlName="valor">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>{{ "descricao" | translate }}</mat-label>
+                <input matInput type="text" id="descricao" formControlName="descricao">
+            </mat-form-field>
+        </div>
+        <hr>
+        <div class="buttons-row d-flex justify-content-between">
+            <button mat-stroked-button class="light-button my-2">{{ "limpar" | translate }}</button>
+            <button mat-raised-button class="pink-button my-2">{{ "salvarProduto" | translate
+                }}</button>
+        </div>
+    </form>
+</mat-dialog-content>

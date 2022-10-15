@@ -1,1 +1,53 @@
-<p>receita works!</p>
+<div class="row">
+    <div class="col-12 col-md-2">
+        <div class="main-title pb-3">{{ "receitas" | translate }}</div>
+    </div>
+    <div class="col-12 col-md-10">
+        <div class="row d-flex">
+            <div class="col-12 col-md-auto d-flex align-items-center flex-fill flex-row-reverse pb-2" id="button-col">
+                <button mat-stroked-button class="light-button" (click)="addReceita()">
+                    Adicionar Receita
+                </button>
+            </div>
+            <div class="col-12 col-md-auto pb-2">
+                <mat-button-toggle-group id="toggle-group">
+                    <mat-button-toggle [checked]="viewTipo == 0" (change)="viewTipo = 0" aria-label="Text align left">
+                        <mat-icon>grid_on</mat-icon> Visualizar como cards
+                    </mat-button-toggle>
+                    <mat-button-toggle [checked]="viewTipo == 1" (change)="viewTipo = 1" aria-label="Text align center">
+                        <mat-icon> table_chart</mat-icon> Visualizar como tabela
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="opacity-background rounded-1 p-3 mt-2">
+    <app-receita-card *ngIf="viewTipo == 0" [receitas]="receitas"></app-receita-card>
+    <app-receita-tabela *ngIf="viewTipo == 1" [receitas]="receitas"></app-receita-tabela>
+
+    <div class="d-flex justify-content-center w-100">
+        <div class="paginator d-flex align-items-center">
+            <mat-form-field appearance="legacy" class="pages">
+                <mat-select [(ngModel)]="quantidade">
+                    <mat-option [value]="15">15 por página</mat-option>
+                    <mat-option [value]="50">50 por página</mat-option>
+                    <mat-option [value]="100">100 por página</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-icon-button matSuffix>
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <strong class="items">
+                <mat-form-field appearance="legacy">
+                    <input matInput [(ngModel)]="pagina">
+                </mat-form-field>
+                de {{ paginas }}
+            </strong>
+            <button mat-icon-button matSuffix>
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

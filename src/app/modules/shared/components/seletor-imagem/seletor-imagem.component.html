@@ -1,0 +1,35 @@
+<div (upload-files)="onUploadFiles($event)" *ngIf="!file">
+    <div class="drop-area d-flex flex-column justify-content-center" appUpload>
+        <span class="drop-icon mx-auto"></span>
+        <div class="text-center mt-1">{{ "textoSeletorImagem" | translate }}</div>
+        <div class="text-center mt-1">{{ "textoSeletorImagem2" | translate }}</div>
+        <button mat-raised-button class="light-button mt-3 mx-auto" (click)="fileInput.click()">
+            {{ "selecionararquivo" | translate }}
+        </button>
+        <input #fileInput type="file" hidden="true" (change)="onUploadFiles($event)">
+    </div>
+</div>
+
+<div class="row" *ngIf="file">
+    <div class="img-preview col-12 col-sm-3">
+        <img class="w-100" src="{{ imagem ? imagem : '../../../../../../../../assets/images/icons/hamburger.svg' }}">
+    </div>
+    <div class="col-12 col-sm-9 mt-1 d-flex align-items-end">
+        <div class="item-list d-flex">
+            <div class="flex-grow-1">
+                <div class="d-flex">
+                    <mat-icon> insert_drive_file</mat-icon>
+                    <div class="flex-grow-1">
+                        <div class="item-name">{{ file.name }}</div>
+                        <div class="d-flex">
+                            <div class="item-size">{{ formatBytes(file.size) }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button mat-icon-button (click)="removeFile()">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

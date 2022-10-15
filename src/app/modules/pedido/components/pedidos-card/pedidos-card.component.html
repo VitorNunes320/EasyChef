@@ -8,10 +8,14 @@
                         <small class="text-muted">{{ pedido.data | date: "dd/MM/yyyy HH:mm" }}</small>
                     </div>
                     <div>
-                        <span *ngIf="pedido.status == 0" class="badge rounded-pill text-bg-primary">{{ "naoIniciado" | translate }}</span>
-                        <span *ngIf="pedido.status == 1" class="badge rounded-pill text-bg-warning">{{ "emPreparacao" | translate }}</span>
-                        <span *ngIf="pedido.status == 2" class="badge rounded-pill text-bg-success">{{ "entregue" | translate }}</span>
-                        <span *ngIf="pedido.status == 3" class="badge rounded-pill text-bg-danger">{{ "cancelado" | translate }}</span>
+                        <span *ngIf="pedido.status == 0" class="badge rounded-pill text-bg-primary">{{ "naoIniciado" |
+                            translate }}</span>
+                        <span *ngIf="pedido.status == 1" class="badge rounded-pill text-bg-warning">{{ "emPreparacao" |
+                            translate }}</span>
+                        <span *ngIf="pedido.status == 2" class="badge rounded-pill text-bg-success">{{ "entregue" |
+                            translate }}</span>
+                        <span *ngIf="pedido.status == 3" class="badge rounded-pill text-bg-danger">{{ "cancelado" |
+                            translate }}</span>
                     </div>
                 </div>
             </div>
@@ -20,7 +24,9 @@
                 <div class="card-list">
                     <div class="p-2" *ngFor="let produto of pedido.produtos">
                         <div class="d-flex">
-                            <img class="my-auto pe-2" src="{{ produto.imagem ? produto.imagem : '../../../../../assets/images/icons/hamburger.svg'}}" alt="product-image" height="32">
+                            <img class="my-auto pe-2"
+                                src="{{ produto.imagem ? produto.imagem : '../../../../../assets/images/icons/hamburger.svg'}}"
+                                alt="product-image" height="32">
                             <div class="flex-grow-1">
                                 <div class="font-weight-bold">
                                     {{ produto.nome }}
@@ -43,8 +49,8 @@
                             {{ pedido.valorTotal | number: "1.2-2"}}
                         </div>
                     </div>
-                    <button mat-raised-button class="blue-button">
-                        <mat-icon>search</mat-icon> <small>{{ "detalhes" | translate }}</small>
+                    <button mat-stroked-button class="light-button table-button ms-2">
+                        <mat-icon>search</mat-icon> {{ 'detalhes' | translate }}
                     </button>
                 </div>
             </div>

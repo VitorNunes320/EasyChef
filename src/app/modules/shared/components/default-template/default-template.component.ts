@@ -14,6 +14,16 @@ export class DefaultTemplateComponent implements OnInit {
         {nome: "listaPedidos", link: "/pedidos"},
       ]
     },
+    { nome: "receitas", links: [
+        {nome: "receitas", link: "/receitas"},
+        {nome: "ingredientes", link: "/ingredientes"},
+      ]
+    },
+    { nome: "inventario", links: [
+        {nome: "inventario", link: "/inventario"},
+        {nome: "estoqueSeguranca", link: "/estoque-seguranca"},
+      ]
+    },
     { nome: "preparacao", links: [
         {nome: "preparacaoPedidos", link: "/preparacao"},
       ]

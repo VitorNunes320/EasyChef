@@ -1,16 +1,20 @@
-<app-top-cards></app-top-cards>
+<div class="main-title pb-3">{{ "dashboard" | translate }}</div>
 
-<div class="row py-4">
-  <div class="col-lg-7">
-    <app-grafico-vendas></app-grafico-vendas>
-  </div>
-  <div class="col-lg-5">
-    <app-feeds></app-feeds>
-  </div>
-</div>
+<div class="opacity-background rounded-1 p-3 mt-2">
+  <app-top-cards></app-top-cards>
 
-<div class="row">
-  <div class="col-12">
-    <app-vendas-card></app-vendas-card>
+  <div class="row py-4">
+    <div class="col-lg-7">
+      <app-grafico-vendas></app-grafico-vendas>
+    </div>
+    <div class="col-lg-5">
+      <app-feeds></app-feeds>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <app-vendas-card></app-vendas-card>
+    </div>
   </div>
 </div>

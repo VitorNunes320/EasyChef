@@ -1,29 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Iceberg&display=swap');
-@import '/src/assets/styles/variables.scss';
+@import url("https://fonts.googleapis.com/css2?family=Iceberg&display=swap");
+@import "/src/assets/styles/variables.scss";
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
-  font-family: Roboto,
-  "Helvetica Neue", sans-serif;
-  background: url("./assets/images/icons/food-background.svg") repeat center center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url("./assets/images/icons/food-background.svg") repeat center
+    center;
+}
+
+.button {
+  color: $color-light;
+  border-radius: 10px;
+  padding: 10px 5px;
 }
 
 .light-button {
-  border: 2px $color-light-button solid;
-  border-radius: 10px;
-  height: 40px;
+  @extend .button;
+  border: 1px $color-light-button solid !important;
+  background-color: transparent !important;
 }
 
 .blue-button {
+  @extend .button;
   background-color: $color-blue;
-  color: $color-light;
-  border-radius: 10px;
-  height: 40px;
+}
+
+.pink-button {
+  @extend .button;
+  background-color: $color-pink;
+}
+
+.table-button {
+  @extend .button;
+  font-size: 12px;
 }
 
 .logo {
-  font-family: 'Iceberg';
+  font-family: "Iceberg";
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -44,7 +61,8 @@ body {
   border-radius: 15px;
 }
 
-table, th {
+table,
+th {
   color: $color-light !important;
 }
 
@@ -64,7 +82,7 @@ mat-progress-spinner.spinner {
 }
 
 .main-title {
-  font-family: 'Segoe UI', bold;
+  font-family: "Segoe UI", bold;
   font-size: 2rem;
   color: $color-light;
   font-weight: bold;
@@ -82,15 +100,17 @@ mat-progress-spinner.spinner {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,.6);
-  border: 1px solid hsla(0,0%,96%,.251);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid hsla(0, 0%, 96%, 0.251);
   border-radius: 24px;
 }
 
-::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
   background-color: transparent;
 }
-::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
   background-color: transparent;
 }
 
@@ -111,7 +131,7 @@ mat-progress-spinner.spinner {
     margin: 0 18px;
 
     mat-form-field {
-      width: 3rem; 
+      width: 3rem;
       text-align: center;
       font-weight: bold;
     }
@@ -134,7 +154,7 @@ mat-progress-spinner.spinner {
 
 .mat-toolbar {
   background-color: $color-dark-blue;
-  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
 table {
@@ -147,7 +167,7 @@ table {
       font-size: 18px !important;
     }
   }
-  
+
   th {
     font-style: normal;
     font-weight: bold;
@@ -178,7 +198,7 @@ table {
 mat-button-toggle {
   background-color: $color-dark-blue !important;
   &.mat-button-toggle-checked {
-      background-color: $color-dark-blue-checked !important;
+    background-color: $color-dark-blue-checked !important;
   }
 }
 
@@ -188,4 +208,57 @@ mat-button-toggle {
 
 .opacity-background {
   background-color: $color-opacity-background;
+}
+
+.dropdown-item {
+  font: normal normal bold 1rem;
+  color: $color-gray;
+
+  &:hover {
+    color: $color-blue;
+    background-color: inherit;
+  }
+}
+
+.dropdown-toggle {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.horizontal-scroll {
+  overflow-x: scroll;
+}
+
+img.rounded-circle {
+  object-fit: cover;
+}
+
+mat-dialog-container {
+  background-color: $color-dark-blue-checked !important;
+  max-height: 100vh !important;
+
+  mat-dialog-content {
+    max-height: 100% !important;
+  }
+}
+
+.scroll-table {
+  width: 100%;
+  overflow: auto;
+
+  .mat-table {
+    min-width: 100%;
+    width: auto;
+    max-width: auto;
+
+    th,
+    td {
+      white-space: normal;
+    }
+  }
+}
+
+.fixed-top {
+  z-index: 999 !important;
 }

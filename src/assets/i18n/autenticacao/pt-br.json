@@ -1,6 +1,7 @@
 {
   "lembreDeMim": "Lembre-se de mim",
   "crieUma": "Crie uma",
+  "dashboard": "Dashboard",
   "naoTemUmaConta": "Não tem uma conta?",
   "senha": "Senha",
   "email": "E-mail",
@@ -28,5 +29,24 @@
   "naoIniciado": "Não Iniciado",
   "cancelado": "Cancelado",
   "detalhes": "Detalhes",
-  "novidades": "Novidades"
+  "novidades": "Novidades",
+  "receitas": "Receitas",
+  "ingredientes": "Ingredientes",
+  "inventario": "Inventário",
+  "estoqueSeguranca": "Estoque de Segurança",
+  "remover": "Remover",
+  "editar": "Editar",
+  "ingredientesLower": "ingredientes",
+  "nome": "Nome",
+  "peso": "Peso",
+  "kcal": "Kcal",
+  "descricao": "Descrição",
+  "valor": "Valor",
+  "unidadeMedida": "Unidade de Medida",
+  "limpar": "Limpar",
+  "salvarProduto": "Salvar Produto",
+  "selecionararquivo": "Selecionar Arquivo",
+  "textoSeletorImagem": "Arraste e solte sua imagem aqui ou clique no botão.",
+  "textoSeletorImagem2": "MENORES QUE 12Mb",
+  "novaReceita": "Nova Receita"
 }

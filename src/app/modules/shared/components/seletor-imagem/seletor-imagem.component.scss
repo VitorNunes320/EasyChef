@@ -1,0 +1,50 @@
+@import '/src/assets/styles/variables.scss';
+
+.drop-area {
+  width: 100%;
+  height: 220px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: $color-dark-blue-checked;
+
+  .drop-icon {
+    background: url('../../../../../assets/images/icons/upload-icon.svg');
+    fill: $color-light;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.drop-area-drag-over {
+  @extend .drop-area;
+
+  .drop-icon {
+    background: url('../../../../../assets/images/icons/upload-icon-drag-over.svg');
+    fill: $color-light;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  background-color: $color-dark-blue;
+  outline: 1px dashed $color-pink;
+  outline-offset: -10px;
+}
+
+.item-list {
+  padding: 10px;
+  border-radius: 6px;
+  background-color: $color-dark-blue;
+  width: 100%;
+}
+
+.img-preview {
+  img {
+    border: 1px solid $color-light;
+    border-radius: 6px;
+    max-width: 100%;
+  }
+}

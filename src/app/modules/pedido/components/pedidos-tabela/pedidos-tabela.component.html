@@ -36,10 +36,14 @@
             Status
         </th>
         <td mat-cell *matCellDef="let element" class="text-center">
-            <span *ngIf="element.status == 0" class="badge rounded-pill text-bg-primary">{{ "naoIniciado" | translate }}</span>
-            <span *ngIf="element.status == 1" class="badge rounded-pill text-bg-warning">{{ "emPreparacao" | translate }}</span>
-            <span *ngIf="element.status == 2" class="badge rounded-pill text-bg-success">{{ "entregue" | translate }}</span>
-            <span *ngIf="element.status == 3" class="badge rounded-pill text-bg-danger">{{ "cancelado" | translate }}</span>
+            <span *ngIf="element.status == 0" class="badge rounded-pill text-bg-primary">{{ "naoIniciado" | translate
+                }}</span>
+            <span *ngIf="element.status == 1" class="badge rounded-pill text-bg-warning">{{ "emPreparacao" | translate
+                }}</span>
+            <span *ngIf="element.status == 2" class="badge rounded-pill text-bg-success">{{ "entregue" | translate
+                }}</span>
+            <span *ngIf="element.status == 3" class="badge rounded-pill text-bg-danger">{{ "cancelado" | translate
+                }}</span>
         </td>
     </ng-container>
 
@@ -49,8 +53,8 @@
         </th>
         <td mat-cell *matCellDef="let element">
             <div class="d-flex flex-row-reverse">
-                <button mat-raised-button class="blue-button">
-                    <mat-icon>search</mat-icon> <small>{{ "detalhes" | translate }}</small>
+                <button mat-stroked-button class="light-button table-button ms-2">
+                    <mat-icon>search</mat-icon> {{ 'detalhes' | translate }}
                 </button>
             </div>
         </td>

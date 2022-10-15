@@ -1,27 +1,30 @@
-
 <mat-toolbar class="fixed-top">
   <mat-toolbar-row>
     <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
       <mat-icon>menu</mat-icon>
     </button>
     <span class="logo">
-      <img src="../../../../assets/images/icons/easy-chef-logo.svg" alt="icon" width="45px" height="45px">&nbsp;Easy Chef
+      <img src="../../../../assets/images/icons/easy-chef-logo.svg" alt="icon" width="45px" height="45px">&nbsp;Easy
+      Chef
     </span>
     <span class="menu-spacer"></span>
-    
+
     <div fxShow="true" fxHide.lt-md class="h-100">
       <div class="d-flex align-items-center h-100">
         <ng-container *ngFor="let item of headerItens">
-          <li class="dropdown h-100">
-            <a class="nav-link dropdown-toggle h-100 d-flex align-items-center" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <mat-icon>expand_more</mat-icon> {{ item.nome | translate }}
+          <div class="dropdown h-100">
+            <a class="dropdown-toggle nav-link h-100 d-flex align-items-center" data-bs-toggle="dropdown"
+              aria-expanded="false" role="button">
+              {{ item.nome | translate }}
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <div class="dropdown-menu dropdown-menu-end">
               <ng-container *ngFor="let link of item.links">
-                <a class="dropdown-item" [routerLink]="link.link">{{ link.nome | translate }}</a>
+                <a class="dropdown-item" [routerLink]="link.link">{{
+                  link.nome | translate
+                  }}</a>
               </ng-container>
             </div>
-          </li>
+          </div>
         </ng-container>
       </div>
     </div>
@@ -35,16 +38,19 @@
         <mat-icon>close</mat-icon>
       </button>
       <ng-container *ngFor="let item of headerItens">
-        <li class="dropdown h-100">
-          <a class="nav-link dropdown-toggle h-100 d-flex align-items-center" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <mat-icon>expand_more</mat-icon> {{ item.nome | translate }}
+        <div class="dropdown h-100">
+          <a class="dropdown-toggle nav-link h-100 d-flex align-items-center" data-bs-toggle="dropdown"
+            aria-expanded="false" role="button">
+            {{ item.nome | translate }}
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <ng-container *ngFor="let link of item.links">
-              <a class="dropdown-item" [routerLink]="link.link">{{ link.nome | translate }}</a>
-            </ng-container>
-          </div>
-        </li>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li *ngFor="let link of item.links">
+              <a class="dropdown-item" [routerLink]="link.link">{{
+                link.nome | translate
+                }}</a>
+            </li>
+          </ul>
+        </div>
       </ng-container>
     </mat-nav-list>
   </mat-sidenav>
