@@ -1,14 +1,25 @@
-<div class="d-flex justify-content-between">
-    <div class="main-title pb-3">{{ "ingredientes" | translate }}</div>
-    <div>
-        <mat-button-toggle-group>
-            <mat-button-toggle [checked]="viewTipo == 0" (change)="viewTipo = 0" aria-label="Text align left">
-                <mat-icon>grid_on</mat-icon> Visualizar como cards
-            </mat-button-toggle>
-            <mat-button-toggle [checked]="viewTipo == 1" (change)="viewTipo = 1" aria-label="Text align center">
-                <mat-icon> table_chart</mat-icon> Visualizar como tabela
-            </mat-button-toggle>
-        </mat-button-toggle-group>
+<div class="row">
+    <div class="col-12 col-md-2">
+        <div class="main-title pb-3">{{ "ingredientes" | translate }}</div>
+    </div>
+    <div class="col-12 col-md-10">
+        <div class="row d-flex">
+            <div class="col-12 col-md-auto d-flex align-items-center flex-fill flex-row-reverse pb-2" id="button-col">
+                <button mat-stroked-button class="light-button" (click)="addReceita()">
+                    {{ "adicionarIngrediente" | translate }}
+                </button>
+            </div>
+            <div class="col-12 col-md-auto pb-2">
+                <mat-button-toggle-group id="toggle-group">
+                    <mat-button-toggle [checked]="viewTipo == 0" (change)="viewTipo = 0" aria-label="Text align left">
+                        <mat-icon>grid_on</mat-icon> {{ "visualizarComoCards" | translate }}
+                    </mat-button-toggle>
+                    <mat-button-toggle [checked]="viewTipo == 1" (change)="viewTipo = 1" aria-label="Text align center">
+                        <mat-icon> table_chart</mat-icon> {{ "visualizarComoTabela" | translate }}
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -20,9 +31,9 @@
         <div class="paginator d-flex align-items-center">
             <mat-form-field appearance="legacy" class="pages">
                 <mat-select [(ngModel)]="quantidade">
-                    <mat-option [value]="15">15 por página</mat-option>
-                    <mat-option [value]="50">50 por página</mat-option>
-                    <mat-option [value]="100">100 por página</mat-option>
+                    <mat-option [value]="15">15 {{ "porPagina" | translate }}</mat-option>
+                    <mat-option [value]="50">50 {{ "porPagina" | translate }}</mat-option>
+                    <mat-option [value]="100">100 {{ "porPagina" | translate }}</mat-option>
                 </mat-select>
             </mat-form-field>
             <button mat-icon-button matSuffix>

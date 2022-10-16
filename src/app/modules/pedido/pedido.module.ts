@@ -17,6 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MesasComponent } from './components/mesas/mesas.component';
+import { MesasCardComponent } from './components/mesas-card/mesas-card.component';
+import { MesasTabelaComponent } from './components/mesas-tabela/mesas-tabela.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     PedidosCardComponent,
     PedidosTabelaComponent,
     NovoPedidoModalComponent,
-    DetalhesPedidoModelComponent
+    DetalhesPedidoModelComponent,
+    MesasComponent,
+    MesasCardComponent,
+    MesasTabelaComponent
   ],
   imports: [
     CommonModule,

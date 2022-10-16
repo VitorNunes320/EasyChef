@@ -47,6 +47,14 @@
   "salvarProduto": "Salvar Produto",
   "selecionararquivo": "Selecionar Arquivo",
   "textoSeletorImagem": "Arraste e solte sua imagem aqui ou clique no botão.",
-  "textoSeletorImagem2": "MENORES QUE 12Mb",
-  "novaReceita": "Nova Receita"
+  "textoSeletorImagem2": "TAMANHO MÁXIMO 5Mb",
+  "novaReceita": "Nova Receita",
+  "adicionarReceita": "Adicionar Receita",
+  "adicionarIngrediente": "Adicionar Ingrediente",
+  "visualizarComoCards": "Visualizar como cards",
+  "visualizarComoTabela": "Visualizar como tabela",
+  "porPagina": "por página",
+  "novoIngrediente": "Novo Ingrediente",
+  "salvarIngrediente": "Salvar Ingrediente",
+  "listaMesas": "Lista de Mesas"
 }

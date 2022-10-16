@@ -1,1 +1,35 @@
-<p>novo-ingrediente-modal works!</p>
+<header mat-dialog-title class="d-flex justify-content-between pb-2">
+    <h1>{{ "novoIngrediente" | translate }}</h1>
+    <mat-icon class="close" mat-dialog-close>close</mat-icon>
+</header>
+
+<mat-dialog-content>
+    <form [formGroup]="ingredienteForm">
+        <app-seletor-imagem (fileEvent)="addFile($event)"></app-seletor-imagem>
+        <hr>
+        <div class="row">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>{{ "nome" | translate }}</mat-label>
+                <input matInput type="text" id="nome" formControlName="nome">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12 col-sm-6">
+                <mat-label>{{ "valor" | translate }}</mat-label>
+                <input matInput type="text" id="valor" formControlName="valor">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12 col-sm-6">
+                <mat-label>{{ "unidadeMedida" | translate }}</mat-label>
+                <input matInput type="text" id="unidadeMedida" formControlName="unidadeMedida">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>{{ "descricao" | translate }}</mat-label>
+                <input matInput type="text" id="descricao" formControlName="descricao">
+            </mat-form-field>
+        </div>
+        <hr>
+        <div class="buttons-row d-flex justify-content-between">
+            <button mat-stroked-button class="light-button my-2">{{ "limpar" | translate }}</button>
+            <button mat-raised-button class="pink-button my-2">{{ "salvarIngrediente" | translate
+                }}</button>
+        </div>
+    </form>
+</mat-dialog-content>

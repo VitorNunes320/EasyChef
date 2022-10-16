@@ -1,12 +1,12 @@
 <div class="d-flex justify-content-between">
   <div class="main-title pb-3">{{ "pedidos" | translate }}</div>
   <div>
-    <mat-button-toggle-group>
+    <mat-button-toggle-group id="toggle-group">
       <mat-button-toggle [checked]="viewTipo == 0" (change)="viewTipo = 0" aria-label="Text align left">
-        <mat-icon>grid_on</mat-icon> Visualizar como cards
+        <mat-icon>grid_on</mat-icon> {{ "visualizarComoCards" | translate }}
       </mat-button-toggle>
       <mat-button-toggle [checked]="viewTipo == 1" (change)="viewTipo = 1" aria-label="Text align center">
-        <mat-icon> table_chart</mat-icon> Visualizar como tabela
+        <mat-icon> table_chart</mat-icon> {{ "visualizarComoTabela" | translate }}
       </mat-button-toggle>
     </mat-button-toggle-group>
   </div>
@@ -14,29 +14,29 @@
 
 <div class="opacity-background rounded-1 p-3 mt-2">
   <app-pedidos-card *ngIf="viewTipo == 0" [pedidos]="pedidos"></app-pedidos-card>
-  <app-pedidos-tabela *ngIf="viewTipo == 1"  [pedidos]="pedidos"></app-pedidos-tabela>
-  
+  <app-pedidos-tabela *ngIf="viewTipo == 1" [pedidos]="pedidos"></app-pedidos-tabela>
+
   <div class="d-flex justify-content-center w-100">
-      <div class="paginator d-flex align-items-center">
-          <mat-form-field appearance="legacy" class="pages">
-              <mat-select [(ngModel)]="quantidade">
-                <mat-option [value]="15">15 por página</mat-option>
-                <mat-option [value]="50">50 por página</mat-option>
-                <mat-option [value]="100">100 por página</mat-option>
-              </mat-select>
-            </mat-form-field>
-          <button mat-icon-button matSuffix>
-            <mat-icon>keyboard_arrow_left</mat-icon>
-          </button>
-          <strong class="items">
-              <mat-form-field appearance="legacy">
-                  <input matInput [(ngModel)]="pagina">
-              </mat-form-field>
-              de {{ paginas }}
-          </strong>
-          <button mat-icon-button matSuffix>
-            <mat-icon>keyboard_arrow_right</mat-icon>
-          </button>
-      </div>
+    <div class="paginator d-flex align-items-center">
+      <mat-form-field appearance="legacy" class="pages">
+        <mat-select [(ngModel)]="quantidade">
+          <mat-option [value]="15">15 {{ "porPagina" | translate }}</mat-option>
+          <mat-option [value]="50">50 {{ "porPagina" | translate }}</mat-option>
+          <mat-option [value]="100">100 {{ "porPagina" | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-icon-button matSuffix>
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <strong class="items">
+        <mat-form-field appearance="legacy">
+          <input matInput [(ngModel)]="pagina">
+        </mat-form-field>
+        de {{ paginas }}
+      </strong>
+      <button mat-icon-button matSuffix>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </div>
   </div>
 </div>
