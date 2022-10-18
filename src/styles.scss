@@ -290,3 +290,42 @@ mat-dialog-container {
     }
   }
 }
+
+td.status-bar {
+  border-left: solid 16px;
+  &.blue {
+    border-left-color: blue;
+  }
+
+  &.orange {
+    border-left-color: orange;
+  }
+
+  &.green {
+    border-left-color: green;
+  }
+
+  &.red {
+    border-left-color: red;
+  }
+}
+
+.dark-card.status-bar {
+  border: unset;
+  border-top: solid 16px;
+  &.blue {
+    border-top-color: blue;
+  }
+
+  &.orange {
+    border-top-color: orange;
+  }
+
+  &.green {
+    border-top-color: green;
+  }
+
+  &.red {
+    border-top-color: red;
+  }
+}

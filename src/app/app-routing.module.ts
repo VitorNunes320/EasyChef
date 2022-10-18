@@ -4,6 +4,7 @@ import { LoginComponent } from "./modules/autenticacao/components/login/login.co
 import { RegistroComponent } from "./modules/autenticacao/components/registro/registro.component";
 import { DashboardComponent } from "./modules/inicio/components/dashboard/dashboard.component";
 import { LandingComponent } from "./modules/inicio/components/landing/landing.component";
+import { InventarioComponent } from "./modules/inventario/components/inventario/inventario.component";
 import { MesasComponent } from "./modules/pedido/components/mesas/mesas.component";
 import { PedidosComponent } from "./modules/pedido/components/pedidos/pedidos.component";
 import { PreparacaoComponent } from "./modules/preparacao/components/preparacao/preparacao.component";
@@ -34,6 +35,7 @@ export const routes: Routes = [
       { path: "ingredientes", component: IngredientesComponent },
       { path: "receitas", component: ReceitaComponent },
       { path: "mesas", component: MesasComponent },
+      { path: "inventario", component: InventarioComponent },
     ],
   },
 ];

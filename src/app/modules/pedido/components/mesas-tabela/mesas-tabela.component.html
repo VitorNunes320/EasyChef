@@ -1,47 +1,52 @@
-<table mat-table [dataSource]="mesasDataSource" matSort class="w-100 mb-2">
+<div class="scroll-table">
+  <table mat-table [dataSource]="mesasDataSource" matSort class="w-100 mb-2">
     <ng-container matColumnDef="mesa">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-            {{ "mesa" | translate }}
-        </th>
-        <td mat-cell *matCellDef="let element" class="count" class="d-flex align-items-center">
-            <span *ngIf="element.ocupada" class="badge rounded-circle text-bg-danger me-2">
-                <mat-icon>block</mat-icon>
-            </span>
-            <span *ngIf="!element.ocupada" class="badge rounded-circle text-bg-success me-2">
-                <mat-icon>check</mat-icon>
-            </span>
-            {{ element.nome }}
-        </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "mesa" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="d-flex align-items-center">
+        <span *ngIf="element.ocupada" class="badge rounded-circle text-bg-danger me-2">
+          <mat-icon>block</mat-icon>
+        </span>
+        <span *ngIf="!element.ocupada" class="badge rounded-circle text-bg-success me-2">
+          <mat-icon>check</mat-icon>
+        </span>
+        {{ element.nome }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="codigo">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-            {{ "codigo" | translate }}
-        </th>
-        <td mat-cell *matCellDef="let element"> {{ element.codigo }}
-        </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "codigo" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element"> {{ element.codigo }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="ocupada">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-            {{ "ocupada" | translate }}
-        </th>
-        <td mat-cell *matCellDef="let element" class="count"> {{ (element.ocupada ? "sim" : "nao") | translate }} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "ocupada" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element"> {{ (element.ocupada ? "sim" : "nao") | translate }} </td>
     </ng-container>
 
     <ng-container matColumnDef="acao">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
 
-        </th>
-        <td mat-cell *matCellDef="let element">
-            <div class="d-flex flex-row-reverse">
-                <button mat-stroked-button class="light-button table-button ms-2">
-                    <mat-icon>search</mat-icon> {{ 'detalhes' | translate }}
-                </button>
-            </div>
-        </td>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div class="d-flex flex-row-reverse">
+          <button mat-raised-button class="pink-button table-button ms-2">
+            <mat-icon>delete</mat-icon> {{ 'remover' | translate }}
+          </button>
+          <button mat-raised-button class="blue-button table-button ms-2">
+            <mat-icon>edit</mat-icon> {{ 'editar' | translate }}
+          </button>
+        </div>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+  </table>
+</div>

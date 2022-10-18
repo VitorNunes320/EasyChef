@@ -26,10 +26,7 @@ export class DefaultTemplateComponent implements OnInit {
     },
     {
       nome: "inventario",
-      links: [
-        { nome: "inventario", link: "/inventario" },
-        { nome: "estoqueSeguranca", link: "/estoque-seguranca" },
-      ],
+      links: [{ nome: "inventario", link: "/inventario" }],
     },
     {
       nome: "preparacao",

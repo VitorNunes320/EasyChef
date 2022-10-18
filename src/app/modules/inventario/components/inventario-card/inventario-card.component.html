@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-12 px-2 pt-0 pb-2" *ngFor='let inventario of inventarios'>
+        <div class="dark-card status-bar"
+            [ngClass]="{'green': inventario.status == 0, 'orange': inventario.status == 1, 'red': inventario.status == 2}">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <img class="rounded-circle me-2"
+                            src="{{ inventario.imagem ? inventario.imagem : '../../../../../assets/images/icons/hamburger.svg'}}"
+                            alt="element.nome" width="40">
+                        <div class="col-auto">
+                            {{ inventario.nome }}
+                            <div class="text-muted">
+                                {{ inventario.quantidade }}{{ inventario.unidadeMedida }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-100">
+                        <div class="d-flex justify-content-center">
+                            <span *ngIf="inventario.status == 0" class="badge rounded-pill text-bg-success">
+                                {{ "ok" | translate }}
+                            </span>
+                            <span *ngIf="inventario.status == 1" class="badge rounded-pill text-bg-warning">
+                                {{ "alerta" | translate }}
+                            </span>
+                            <span *ngIf="inventario.status == 2" class="badge rounded-pill text-bg-danger">
+                                {{ "critico" | translate }}
+                            </span>
+                        </div>
+                        <div class="text-center mt-2">
+                            {{ inventario.valor | number: "1.2-2"}}
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-6 py-1">
+                        <strong>
+                            {{ "estoqueMinimo" | translate }}:&nbsp;
+                        </strong>
+                        <br>
+                        {{ inventario.estoqueMinimo | number: "1.2-2"}}{{ inventario.unidadeMedida }}
+                    </div>
+                    <div class="col-6 py-1">
+                        <strong>
+                            {{ "estoqueMaximo" | translate }}:&nbsp;
+                        </strong>
+                        <br>
+                        {{ inventario.estoqueMaximo | number: "1.2-2"}}{{ inventario.unidadeMedida }}
+                    </div>
+                    <div class="col-6 text-truncate py-1">
+                        <strong>
+                            {{ "usuarioAtualizou" | translate }}:&nbsp;
+                        </strong>
+                        <br>
+                        {{ inventario.usuarioAtualizou }}
+                    </div>
+                    <div class="col-6 py-1">
+                        <strong>
+                            {{ "atualizadoEm" | translate }}:&nbsp;
+                        </strong>
+                        <br>
+                        {{ inventario.atualizadoEm | date: "dd/MM/yy HH:mm:ss" }}
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="card-body">
+                <strong>{{ "descricao" | translate }}:</strong><br><br>
+                <small>
+                    {{ inventario.descricao ? inventario.descricao : "nenhumaDescricaoDisponivel" | translate }}
+                </small>
+                <hr>
+                <div class="d-flex flex-row-reverse">
+                    <button mat-raised-button class="pink-button table-button ms-2">
+                        <mat-icon>delete</mat-icon> {{ 'remover' | translate }}
+                    </button>
+                    <button mat-raised-button class="blue-button table-button ms-2">
+                        <mat-icon>edit</mat-icon> {{ 'editar' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

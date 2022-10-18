@@ -16,6 +16,7 @@ import { PedidoModule } from "./modules/pedido/pedido.module";
 import { PreparacaoModule } from "./modules/preparacao/preparacao.module";
 import { RelatorioModule } from "./modules/relatorio/relatorio.module";
 import { ReceitaModule } from "./modules/receita/receita.module";
+import { InventarioModule } from "./modules/inventario/inventario.module";
 
 @NgModule({
   declarations: [AppComponent, SnackbarComponent],
@@ -32,6 +33,7 @@ import { ReceitaModule } from "./modules/receita/receita.module";
     PreparacaoModule,
     RelatorioModule,
     ReceitaModule,
+    InventarioModule,
   ],
   providers: [
     FormBuilder,

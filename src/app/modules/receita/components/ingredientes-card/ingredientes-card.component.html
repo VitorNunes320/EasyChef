@@ -4,7 +4,9 @@
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <th>
-                        <img class="rounded-circle me-2" [src]="ingrediente.imagem" alt="element.nome" width="40">
+                        <img class="rounded-circle me-2"
+                            src="{{ ingrediente.imagem ? ingrediente.imagem : '../../../../../assets/images/icons/hamburger.svg'}}"
+                            alt="element.nome" width="40">
                         {{ ingrediente.nome }}
                     </th>
                     <div class="h-100">

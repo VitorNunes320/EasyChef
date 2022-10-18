@@ -1,0 +1,104 @@
+<div class="scroll-table">
+  <table mat-table [dataSource]="inventarioDataSource" matSort class="w-100 mb-2">
+    <ng-container matColumnDef="inventario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "inventario" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="status-bar"
+        [ngClass]="{'green': element.status == 0, 'orange': element.status == 1, 'red': element.status == 2}">
+        <div class="d-flex align-items-center">
+          <img class="rounded-circle me-2"
+            src="{{ element.imagem ? element.imagem : '../../../../../assets/images/icons/hamburger.svg'}}"
+            alt="product-image" height="32">{{ element.nome }}
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantidade">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "quantidade" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element"> {{ element.quantidade }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="unidadeMedida">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "unidadeMedida" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.unidadeMedida }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "descricao" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="text-muted"> {{ element.descricao }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="valor">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "valor" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.valor | number: "1.2-2" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="estoqueMinimo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "estoqueMinimo" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.estoqueMinimo | number: "1.2-2" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="estoqueMaximo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "estoqueMaximo" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.estoqueMaximo | number: "1.2-2" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="atualizadoEm">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "atualizadoEm" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.atualizadoEm | date: "dd/MM/yy HH:mm:ss" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="usuarioAtualizou">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "usuarioAtualizou" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.usuarioAtualizou }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acao">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div class="d-flex flex-row-reverse">
+          <button mat-raised-button class="pink-button table-button ms-2">
+            <mat-icon>delete</mat-icon> {{ 'remover' | translate }}
+          </button>
+          <button mat-raised-button class="blue-button table-button ms-2">
+            <mat-icon>edit</mat-icon> {{ 'editar' | translate }}
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
