@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { MenuComponent } from "./components/menu/menu.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -27,7 +26,6 @@ import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
-    MenuComponent,
     AuthTemplateComponent,
     DefaultTemplateComponent,
     SeletorImagemComponent,

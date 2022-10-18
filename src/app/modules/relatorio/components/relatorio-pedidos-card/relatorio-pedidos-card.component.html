@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-12 px-2 pt-0 pb-2" *ngFor='let relatorio of relatorios'>
+        <div class="dark-card status-bar"
+            [ngClass]="{'blue': relatorio.comparacaoStatus == 0, 'green': relatorio.comparacaoStatus == 1, 'red': relatorio.comparacaoStatus == 2}">
+            <div class="card-header">
+                <div class="d-flex justify-content-between">
+                    <h3 class="mb-0 font-weight-bold">{{ relatorio.periodo }}</h3>
+                    <h4 *ngIf="relatorio.comparacaoStatus == 0" class="badge rounded-pill text-bg-primary">
+                        {{ relatorio.comparacao }}&nbsp;<i class="bi bi-circle"></i>
+                    </h4>
+                    <h4 *ngIf="relatorio.comparacaoStatus == 1" class="badge rounded-pill text-bg-success">
+                        {{ relatorio.comparacao }}&nbsp;<i class="bi bi-chevron-double-up"></i>
+                    </h4>
+                    <h4 *ngIf="relatorio.comparacaoStatus == 2" class="badge rounded-pill text-bg-danger">
+                        {{ relatorio.comparacao }}&nbsp;<i class="bi bi-chevron-double-down"></i>
+                    </h4>
+                </div>
+            </div>
+            <hr>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 py-1">
+                        <strong>
+                            {{ "quantidadePedidos" | translate }}:&nbsp;
+                        </strong>
+                        <br>
+                        {{ relatorio.numeroPedidos }}
+                    </div>
+                    <div class="col-6 py-1">
+                        <strong>
+                            {{ "valorTotal" | translate }}:&nbsp;
+                        </strong>
+                        <br>
+                        {{ relatorio.valorTotal | number: "1.2-2"}}
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex flex-row-reverse">
+                    <button mat-stroked-button class="light-button table-button ms-2">
+                        <mat-icon>search</mat-icon> {{ 'detalhes' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

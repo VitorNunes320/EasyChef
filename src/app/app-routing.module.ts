@@ -10,9 +10,9 @@ import { PedidosComponent } from "./modules/pedido/components/pedidos/pedidos.co
 import { PreparacaoComponent } from "./modules/preparacao/components/preparacao/preparacao.component";
 import { IngredientesComponent } from "./modules/receita/components/ingredientes/ingredientes.component";
 import { ReceitaComponent } from "./modules/receita/components/receita/receita.component";
+import { RelatorioPedidosComponent } from "./modules/relatorio/components/relatorio-pedidos/relatorio-pedidos.component";
 import { AuthTemplateComponent } from "./modules/shared/components/auth-template/auth-template.component";
 import { DefaultTemplateComponent } from "./modules/shared/components/default-template/default-template.component";
-import { MenuComponent } from "./modules/shared/components/menu/menu.component";
 
 export const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
@@ -36,6 +36,7 @@ export const routes: Routes = [
       { path: "receitas", component: ReceitaComponent },
       { path: "mesas", component: MesasComponent },
       { path: "inventario", component: InventarioComponent },
+      { path: "relatorios", component: RelatorioPedidosComponent },
     ],
   },
 ];

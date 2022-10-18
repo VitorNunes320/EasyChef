@@ -11,6 +11,10 @@ import { TranslateService } from "@ngx-translate/core";
 export class DefaultTemplateComponent implements OnInit {
   public headerItens: HeaderItem[] = [
     {
+      nome: "dashboard",
+      links: [{ nome: "dashboard", link: "/dashboard" }],
+    },
+    {
       nome: "pedidos",
       links: [
         { nome: "listaPedidos", link: "/pedidos" },
@@ -34,9 +38,8 @@ export class DefaultTemplateComponent implements OnInit {
     },
     {
       nome: "relatorios",
-      links: [{ nome: "relatorioPedidos", link: "/relatorios/pedidos" }],
+      links: [{ nome: "relatorioPedidos", link: "/relatorios" }],
     },
-    { nome: "clientes", links: [{ nome: "listaClientes", link: "/clientes" }] },
   ];
 
   constructor(

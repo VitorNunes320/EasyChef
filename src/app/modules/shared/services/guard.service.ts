@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Router, CanActivate } from '@angular/router';
-import { StorageService } from '../../autenticacao/services/storage.service';
+import { Injectable } from "@angular/core";
+import { Router, CanActivate } from "@angular/router";
+import { StorageService } from "../../autenticacao/services/storage.service";
 
 @Injectable()
 export class GuardService implements CanActivate {
-
   constructor(public router: Router, private storageService: StorageService) {}
 
   canActivate(): boolean {
@@ -12,7 +11,7 @@ export class GuardService implements CanActivate {
       return true;
     }
 
-    this.router.navigate(['/autenticacao/login']);
+    this.router.navigate(["/autenticacao/login"]);
     return false;
   }
 }

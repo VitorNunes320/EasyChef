@@ -2,7 +2,8 @@
   <div class="dark-card">
     <div class="w-100 d-flex pb-2" [ngClass]="{'pb-5': !erro}">
       <span class="logo mx-auto">
-        <img src="../../../../assets/images/icons/easy-chef-logo.svg" alt="icon" width="45px" height="45px">&nbsp;EasyChef
+        <img src="../../../../assets/images/icons/easy-chef-logo.svg" alt="icon" width="45px"
+          height="45px">&nbsp;EasyChef
       </span>
     </div>
     <mat-error *ngIf="erro" class="my-2 w-100 text-center">{{ mensagemErro | translate }}</mat-error>
@@ -10,18 +11,21 @@
       <mat-form-field appearance="outline" class="w-100 pb-3">
         <mat-label>{{ "email" | translate }}</mat-label>
         <input matInput type="text" id="email" formControlName="email">
-        <mat-hint>{{ "naoTemUmaConta" | translate }}<a class="light-link" href="#">{{ "crieUma" | translate }}</a></mat-hint>
+        <mat-hint>{{ "naoTemUmaConta" | translate }}<a class="light-link" href="#">{{ "crieUma" | translate }}</a>
+        </mat-hint>
       </mat-form-field>
       <mat-form-field appearance="outline" class="w-100 pb-3">
         <mat-label>{{ "senha" | translate }}</mat-label>
         <input matInput [type]="esconderSenha ? 'password' : 'text'" id="senha" formControlName="senha">
-        <button mat-icon-button matSuffix (click)="esconderSenha = !esconderSenha" style="background-color: transparent; border: none; color: inherit;">
+        <button mat-icon-button matSuffix (click)="esconderSenha = !esconderSenha"
+          style="background-color: transparent; border: none; color: inherit;">
           <mat-icon>{{esconderSenha ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
         <mat-hint>Esqueceu seu <a class="light-link" href="#">e-mail ou senha</a>?</mat-hint>
       </mat-form-field>
       <div class="col">
-        <mat-checkbox id="lembreDeMim" formControlName="lembreDeMim" class="pb-3 auth-check-box">{{ "lembreDeMim" | translate }}</mat-checkbox>
+        <mat-checkbox id="lembreDeMim" formControlName="lembreDeMim" class="pb-3 auth-check-box">{{ "lembreDeMim" |
+          translate }}</mat-checkbox>
       </div>
     </form>
 
@@ -31,4 +35,4 @@
   </div>
 </div>
 
-<mat-progress-spinner *ngIf="loading"	class="spinner"	[mode]="'indeterminate'"></mat-progress-spinner>
+<mat-progress-spinner *ngIf="loading" class="spinner" [mode]="'indeterminate'"></mat-progress-spinner>
