@@ -1,1 +1,23 @@
-<p>mesas works!</p>
+<div class="d-flex justify-content-between">
+  <div class="main-title pb-3">{{ "mesas" | translate }}</div>
+  <div>
+    <mat-button-toggle-group id="toggle-group">
+      <mat-button-toggle [checked]="viewTipo == 0" (change)="viewTipo = 0" aria-label="Text align left">
+        <mat-icon>grid_on</mat-icon> {{ "visualizarComoCards" | translate }}
+      </mat-button-toggle>
+      <mat-button-toggle [checked]="viewTipo == 1" (change)="viewTipo = 1" aria-label="Text align center">
+        <mat-icon> table_chart</mat-icon> {{ "visualizarComoTabela" | translate }}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>
+
+<div class="opacity-background rounded-1 p-3 mt-2">
+  <app-mesas-card [mesas]="mesas" *ngIf="viewTipo == 0"></app-mesas-card>
+  <app-mesas-tabela [mesas]="mesas" *ngIf="viewTipo == 1"></app-mesas-tabela>
+  <div class="d-flex justify-content-center w-100">
+    <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
+      (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">
+    </app-paginator>
+  </div>
+</div>

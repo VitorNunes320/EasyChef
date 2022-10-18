@@ -1,0 +1,21 @@
+<div class="paginator d-flex align-items-center">
+    <mat-form-field appearance="legacy" class="pages">
+        <mat-select [(ngModel)]="quantidade" (selectionChange)="trocarQuantidade()">
+            <mat-option [value]="15">15 por página</mat-option>
+            <mat-option [value]="50">50 por página</mat-option>
+            <mat-option [value]="100">100 por página</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-icon-button matSuffix (click)="trocarPagina(false)">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <strong class="items">
+        <mat-form-field appearance="legacy">
+            <input matInput [(ngModel)]="pagina">
+        </mat-form-field>
+        de {{ paginas }}
+    </strong>
+    <button mat-icon-button matSuffix (click)="trocarPagina(true)">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+</div>

@@ -19,6 +19,11 @@ import { HttpLoaderFactory } from "../shared/services/http-loader.service";
 import { HttpClient } from "@angular/common/http";
 import { SeletorImagemComponent } from "./components/seletor-imagem/seletor-imagem.component";
 import { UploadDirective } from "./diretivas/drag-and-drop.directive";
+import { PaginatorComponent } from "./components/paginator/paginator.component";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -27,6 +32,7 @@ import { UploadDirective } from "./diretivas/drag-and-drop.directive";
     DefaultTemplateComponent,
     SeletorImagemComponent,
     UploadDirective,
+    PaginatorComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +44,11 @@ import { UploadDirective } from "./diretivas/drag-and-drop.directive";
     FlexLayoutModule,
     MatSnackBarModule,
     MatMenuModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forRoot(routes),
     TranslateModule.forRoot({
       loader: {
@@ -47,7 +58,7 @@ import { UploadDirective } from "./diretivas/drag-and-drop.directive";
       },
     }),
   ],
-  providers: [SeletorImagemComponent],
-  exports: [SeletorImagemComponent],
+  providers: [SeletorImagemComponent, PaginatorComponent],
+  exports: [SeletorImagemComponent, PaginatorComponent],
 })
 export class SharedModule {}

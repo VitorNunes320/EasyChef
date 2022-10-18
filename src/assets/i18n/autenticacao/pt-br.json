@@ -56,5 +56,12 @@
   "porPagina": "por página",
   "novoIngrediente": "Novo Ingrediente",
   "salvarIngrediente": "Salvar Ingrediente",
-  "listaMesas": "Lista de Mesas"
+  "listaMesas": "Lista de Mesas",
+  "mesas": "Mesas",
+  "mesa": "Mesa",
+  "livre": "Livre",
+  "ocupado": "Ocupado",
+  "ocupada": "Ocupada",
+  "sim": "Sim",
+  "nao": "Não"
 }

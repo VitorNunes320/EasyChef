@@ -1,11 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Pedido } from '../../models/pedido.model';
-import { PedidoService } from '../../services/pedido.service';
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Pedido } from "../../models/pedido.model";
+import { PedidoService } from "../../services/pedido.service";
 
 @Component({
-  selector: 'app-pedidos',
-  templateUrl: './pedidos.component.html',
-  styleUrls: ['./pedidos.component.scss']
+  selector: "app-pedidos",
+  templateUrl: "./pedidos.component.html",
+  styleUrls: ["./pedidos.component.scss"],
 })
 export class PedidosComponent implements OnInit {
   public pagina: number = 1;
@@ -15,334 +15,337 @@ export class PedidosComponent implements OnInit {
 
   @Output() emitPedidos: EventEmitter<Pedido[]> = new EventEmitter();
   public pedidos: Pedido[] = [
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 0,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 0,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 3,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 2,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 1,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 2,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 1,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 3,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 2,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
-    { 
-      id: '', 
-      codigo: '#1', 
-      data: new Date(), 
-      valorTotal: 50, 
-      quantidadeItens: 4, 
-      usuarioNome: 'Vitor', 
-      usuarioId: '', 
-      vendedorNome: 'Vitor', 
-      vendedorId: '', 
+    {
+      id: "",
+      codigo: "#1",
+      data: new Date(),
+      valorTotal: 50,
+      quantidadeItens: 4,
+      usuarioNome: "Vitor",
+      usuarioId: "",
+      vendedorNome: "Vitor",
+      vendedorId: "",
       status: 1,
       produtos: [
-        { 
-          id: '1',
-          nome: 'Hamburguer',
+        {
+          id: "1",
+          nome: "Hamburguer",
           valor: 15,
-          quantidade: 2
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
+          quantidade: 2,
         },
-        { 
-          id: '1',
-          nome: 'Macarrão',
+        {
+          id: "1",
+          nome: "Macarrão",
           valor: 10,
-          quantidade: 2 
-        }
-      ]
+          quantidade: 2,
+        },
+      ],
     },
   ];
 
-  constructor(
-    private readonly pedidoService: PedidoService
-    ) { 
+  constructor(private readonly pedidoService: PedidoService) {}
+
+  ngOnInit(): void {}
+
+  public onPaginaChange(event: number): void {
+    this.pagina = event;
   }
 
-  ngOnInit(): void {
+  public onQuantidadeChange(event: number): void {
+    this.quantidade = event;
   }
-
 }
