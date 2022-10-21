@@ -1,0 +1,8 @@
+@import "/src/assets/styles/variables.scss";
+
+mat-dialog-content {
+  padding: 10px;
+  min-height: 6rem;
+  background-color: $color-dark-blue;
+  border-radius: 10px;
+}

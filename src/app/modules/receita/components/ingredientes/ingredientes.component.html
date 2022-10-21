@@ -5,7 +5,7 @@
     <div class="col-12 col-md-10">
         <div class="row d-flex">
             <div class="col-12 col-md-auto d-flex align-items-center flex-fill flex-row-reverse pb-2" id="button-col">
-                <button mat-stroked-button class="light-button" (click)="addReceita()">
+                <button mat-stroked-button class="light-button" (click)="addIngrediente()">
                     {{ "adicionarIngrediente" | translate }}
                 </button>
             </div>
@@ -24,30 +24,13 @@
 </div>
 
 <div class="opacity-background rounded-1 p-3 mt-2">
-    <app-ingredientes-card *ngIf="viewTipo == 0" [ingredientes]="ingredientes"></app-ingredientes-card>
+    <app-ingredientes-card *ngIf="viewTipo == 0" [ingredientes]="ingredientes" (emitOpcao)="onOpcaoSelected($event)">
+    </app-ingredientes-card>
     <app-ingredientes-tabela *ngIf="viewTipo == 1" [ingredientes]="ingredientes"></app-ingredientes-tabela>
 
     <div class="d-flex justify-content-center w-100">
-        <div class="paginator d-flex align-items-center">
-            <mat-form-field appearance="legacy" class="pages">
-                <mat-select [(ngModel)]="quantidade">
-                    <mat-option [value]="15">15 {{ "porPagina" | translate }}</mat-option>
-                    <mat-option [value]="50">50 {{ "porPagina" | translate }}</mat-option>
-                    <mat-option [value]="100">100 {{ "porPagina" | translate }}</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <button mat-icon-button matSuffix>
-                <mat-icon>keyboard_arrow_left</mat-icon>
-            </button>
-            <strong class="items">
-                <mat-form-field appearance="legacy">
-                    <input matInput [(ngModel)]="pagina">
-                </mat-form-field>
-                de {{ paginas }}
-            </strong>
-            <button mat-icon-button matSuffix>
-                <mat-icon>keyboard_arrow_right</mat-icon>
-            </button>
-        </div>
+        <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
+            (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">
+        </app-paginator>
     </div>
 </div>

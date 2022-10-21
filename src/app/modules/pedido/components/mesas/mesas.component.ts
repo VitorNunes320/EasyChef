@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
 import { Mesa } from "../../models/mesa.model";
+import { NovaMesaModalComponent } from "../modals/nova-mesa-modal/nova-mesa-modal.component";
 
 @Component({
   selector: "app-mesas",
@@ -21,7 +23,7 @@ export class MesasComponent implements OnInit {
     { id: "1", codigo: 7, ocupada: false, nome: "Mesa" },
   ];
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -31,5 +33,13 @@ export class MesasComponent implements OnInit {
 
   public onQuantidadeChange(event: number): void {
     this.quantidade = event;
+  }
+
+  public addMesa(): void {
+    const dialogRef = this.dialog.open(NovaMesaModalComponent, {
+      maxWidth: "1000px",
+      width: "100%",
+      backdropClass: "backdrop-blur",
+    });
   }
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { Receita } from "./../../models/receita.model";
 import { MatDialog } from "@angular/material/dialog";
 import { NovaReceitaModalComponent } from "../modals/nova-receita-modal/nova-receita-modal.component";
-import { SeletorImagemComponent } from "src/app/modules/shared/components/seletor-imagem/seletor-imagem.component";
 
 @Component({
   selector: "app-receita",
@@ -340,6 +339,14 @@ export class ReceitaComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
+
+  public onPaginaChange(event: number): void {
+    this.pagina = event;
+  }
+
+  public onQuantidadeChange(event: number): void {
+    this.quantidade = event;
+  }
 
   public addReceita(): void {
     const dialogRef = this.dialog.open(NovaReceitaModalComponent, {

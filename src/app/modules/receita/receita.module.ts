@@ -27,12 +27,12 @@ import { MatDialogModule } from "@angular/material/dialog";
   declarations: [
     ReceitaComponent,
     IngredientesComponent,
-    NovaReceitaModalComponent,
-    NovoIngredienteModalComponent,
     IngredientesTabelaComponent,
     IngredientesCardComponent,
     ReceitaTabelaComponent,
     ReceitaCardComponent,
+    NovaReceitaModalComponent,
+    NovoIngredienteModalComponent,
   ],
   imports: [
     CommonModule,

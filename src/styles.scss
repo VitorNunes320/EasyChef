@@ -329,3 +329,13 @@ td.status-bar {
     border-top-color: red;
   }
 }
+
+.buttons-row {
+  flex-wrap: wrap;
+  @media (max-width: 576px) {
+    button {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  }
+}

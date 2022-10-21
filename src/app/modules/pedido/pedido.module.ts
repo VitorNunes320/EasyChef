@@ -4,7 +4,7 @@ import { PedidosComponent } from "./components/pedidos/pedidos.component";
 import { PedidosCardComponent } from "./components/pedidos-card/pedidos-card.component";
 import { PedidosTabelaComponent } from "./components/pedidos-tabela/pedidos-tabela.component";
 import { NovoPedidoModalComponent } from "./components/modals/novo-pedido-modal/novo-pedido-modal.component";
-import { DetalhesPedidoModelComponent } from "./components/modals/detalhes-pedido-model/detalhes-pedido-model.component";
+import { DetalhesPedidoModalComponent } from "./components/modals/detalhes-pedido-modal/detalhes-pedido-modal.component";
 
 import { HttpLoaderFactory } from "../shared/services/http-loader.service";
 import { HttpClient } from "@angular/common/http";
@@ -21,6 +21,8 @@ import { MesasComponent } from "./components/mesas/mesas.component";
 import { MesasCardComponent } from "./components/mesas-card/mesas-card.component";
 import { MesasTabelaComponent } from "./components/mesas-tabela/mesas-tabela.component";
 import { SharedModule } from "../shared/shared.module";
+import { MatDialogModule } from "@angular/material/dialog";
+import { NovaMesaModalComponent } from "./components/modals/nova-mesa-modal/nova-mesa-modal.component";
 
 @NgModule({
   declarations: [
@@ -28,10 +30,11 @@ import { SharedModule } from "../shared/shared.module";
     PedidosCardComponent,
     PedidosTabelaComponent,
     NovoPedidoModalComponent,
-    DetalhesPedidoModelComponent,
+    DetalhesPedidoModalComponent,
     MesasComponent,
     MesasCardComponent,
     MesasTabelaComponent,
+    NovaMesaModalComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +48,7 @@ import { SharedModule } from "../shared/shared.module";
     MatTableModule,
     MatButtonToggleModule,
     SharedModule,
+    MatDialogModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -101,5 +101,13 @@ export class RelatorioPedidosComponent implements OnInit {
 
   constructor() {}
 
+  public onPaginaChange(event: number): void {
+    this.pagina = event;
+  }
+
+  public onQuantidadeChange(event: number): void {
+    this.quantidade = event;
+  }
+
   ngOnInit(): void {}
 }

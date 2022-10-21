@@ -1,16 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Ingrediente } from '../../models/ingrediente.model';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Ingrediente } from "../../models/ingrediente.model";
 
 @Component({
-  selector: 'app-ingredientes-card',
-  templateUrl: './ingredientes-card.component.html',
-  styleUrls: ['./ingredientes-card.component.scss']
+  selector: "app-ingredientes-card",
+  templateUrl: "./ingredientes-card.component.html",
+  styleUrls: ["./ingredientes-card.component.scss"],
 })
 export class IngredientesCardComponent implements OnInit {
   @Input() ingredientes: Ingrediente[] = [];
-  constructor() { }
+  @Output() emitOpcao: EventEmitter<number> = new EventEmitter();
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  public selecionarOpcao(opcao: number): void {
+    this.emitOpcao.emit(opcao);
   }
-
 }

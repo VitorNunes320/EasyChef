@@ -1,0 +1,16 @@
+<header mat-dialog-title class="d-flex justify-content-between">
+  <h1>{{ dados.titulo | translate }}</h1>
+  <mat-icon class=" close" mat-dialog-close>close</mat-icon>
+</header>
+
+<mat-dialog-content class="text-center dialog-text w-100 m-0">
+  {{ dados.mensagem | translate }}
+</mat-dialog-content>
+
+<mat-dialog-actions class="d-flex justify-content-center">
+  <ng-container *ngFor="let botao of dados.botoes">
+    <button mat-raised-button [class]="botao.classe" (click)="selecionarOpcao(botao.id)">
+      {{ botao.texto | translate }}
+    </button>
+  </ng-container>
+</mat-dialog-actions>
