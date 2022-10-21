@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { MatTableDataSource } from "@angular/material/table";
 import { Inventario } from "../../models/inventario.model";
 
@@ -9,6 +9,7 @@ import { Inventario } from "../../models/inventario.model";
 })
 export class InventarioTabelaComponent implements OnInit {
   @Input() inventarios: Inventario[] = [];
+  @Output() emitOpcao: EventEmitter<number> = new EventEmitter();
   public displayedColumns: string[] = [
     "inventario",
     "quantidade",
@@ -28,5 +29,9 @@ export class InventarioTabelaComponent implements OnInit {
 
   ngOnInit(): void {
     this.inventarioDataSource = new MatTableDataSource(this.inventarios);
+  }
+
+  public selecionarOpcao(opcao: number): void {
+    this.emitOpcao.emit(opcao);
   }
 }

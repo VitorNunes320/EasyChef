@@ -13,8 +13,10 @@
 </div>
 
 <div class="opacity-background rounded-1 p-3 mt-2">
-  <app-inventario-card [inventarios]="inventarios" *ngIf="viewTipo == 0"></app-inventario-card>
-  <app-inventario-tabela [inventarios]="inventarios" *ngIf="viewTipo == 1"></app-inventario-tabela>
+  <app-inventario-card [inventarios]="inventarios" *ngIf="viewTipo == 0" (emitOpcao)="onOpcaoSelected($event)">
+  </app-inventario-card>
+  <app-inventario-tabela [inventarios]="inventarios" *ngIf="viewTipo == 1" (emitOpcao)="onOpcaoSelected($event)">
+  </app-inventario-tabela>
   <div class="d-flex justify-content-center w-100">
     <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
       (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">

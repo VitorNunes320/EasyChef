@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { IngredienteReceita, Receita } from "../../models/receita.model";
 
 @Component({
@@ -8,6 +8,7 @@ import { IngredienteReceita, Receita } from "../../models/receita.model";
 })
 export class ReceitaCardComponent implements OnInit {
   @Input() receitas: Receita[] = [];
+  @Output() emitOpcao: EventEmitter<number> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
@@ -19,5 +20,9 @@ export class ReceitaCardComponent implements OnInit {
     });
 
     return valorTotal;
+  }
+
+  public selecionarOpcao(opcao: number): void {
+    this.emitOpcao.emit(opcao);
   }
 }

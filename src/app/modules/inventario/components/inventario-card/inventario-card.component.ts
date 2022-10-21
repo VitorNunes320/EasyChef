@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Inventario } from "./../../models/inventario.model";
 
 @Component({
@@ -8,7 +8,12 @@ import { Inventario } from "./../../models/inventario.model";
 })
 export class InventarioCardComponent implements OnInit {
   @Input() inventarios: Inventario[] = [];
+  @Output() emitOpcao: EventEmitter<number> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
+
+  public selecionarOpcao(opcao: number): void {
+    this.emitOpcao.emit(opcao);
+  }
 }

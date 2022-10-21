@@ -24,10 +24,12 @@
 </div>
 
 <div class="opacity-background rounded-1 p-3 mt-2">
-    <app-receita-card *ngIf="viewTipo == 0" [receitas]="receitas"></app-receita-card>
-    <app-receita-tabela *ngIf="viewTipo == 1" [receitas]="receitas"></app-receita-tabela>
+    <app-receita-card *ngIf="viewTipo == 0" [receitas]="receitas" (emitOpcao)="onOpcaoSelected($event)">
+    </app-receita-card>
+    <app-receita-tabela *ngIf="viewTipo == 1" [receitas]="receitas" (emitOpcao)="onOpcaoSelected($event)">
+    </app-receita-tabela>
 
-    <div class="d-flex justify-content-center w-100">
+    <div class=" d-flex justify-content-center w-100">
         <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
             (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">
         </app-paginator>

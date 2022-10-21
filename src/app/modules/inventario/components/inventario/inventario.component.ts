@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
+import { OptionModalComponent } from "src/app/modules/shared/components/option-modal/option-modal.component";
+import { OptionModalModel } from "src/app/modules/shared/models/option-dialog.model";
 import { Inventario } from "../../models/inventario.model";
 
 @Component({
@@ -239,7 +242,7 @@ export class InventarioComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -249,5 +252,42 @@ export class InventarioComponent implements OnInit {
 
   public onQuantidadeChange(event: number): void {
     this.quantidade = event;
+  }
+
+  public onOpcaoSelected(opcao: number): void {
+    if (opcao === 0) {
+      this.remover(opcao.toString());
+    }
+  }
+
+  public remover(id: string): void {
+    const dialogData: OptionModalModel = <OptionModalModel>{
+      titulo: "removerItem",
+      mensagem: "confirmarAcaoTexto",
+      botoes: [
+        {
+          id: 0,
+          texto: "nao",
+          classe: "mat-stroked-button light-button",
+        },
+        {
+          id: 1,
+          texto: "sim",
+          classe: "mat-raised-button pink-button",
+        },
+      ],
+    };
+
+    const dialogRef = this.dialog.open(OptionModalComponent, {
+      maxWidth: "520px",
+      data: dialogData,
+      backdropClass: "backdrop-blur",
+    });
+
+    dialogRef.afterClosed().subscribe((dialogResult) => {
+      if (dialogResult == 1) {
+        console.log(dialogResult);
+      }
+    });
   }
 }
