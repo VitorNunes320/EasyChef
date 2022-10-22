@@ -27,6 +27,7 @@
   "funcionario": "employee",
   "indicesDeVendas": "Sales Indices",
   "ingrediente": "Ingredient",
+  "ingredienteJaFoiSelecionado": "The ingredient has already been selected!",
   "ingredientes": "Ingredients",
   "ingredientesLower": "ingredients",
   "inventario": "Inventory",

@@ -22,6 +22,9 @@ import { ReceitaTabelaComponent } from "./components/receita-tabela/receita-tabe
 import { ReceitaCardComponent } from "./components/receita-card/receita-card.component";
 import { SharedModule } from "../shared/shared.module";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatChipsModule } from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatButtonToggleModule,
     SharedModule,
     MatDialogModule,
+    MatAutocompleteModule,
+    MatProgressSpinnerModule,
+    MatChipsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

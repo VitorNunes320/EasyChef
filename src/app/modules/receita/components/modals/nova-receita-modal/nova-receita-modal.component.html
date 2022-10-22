@@ -1,43 +1,71 @@
 <header mat-dialog-title class="d-flex justify-content-between pb-2">
-    <h1>{{ "novaReceita" | translate }}</h1>
-    <mat-icon class="close" mat-dialog-close>close</mat-icon>
+  <h1>{{ "novaReceita" | translate }}</h1>
+  <mat-icon class="close" mat-dialog-close>close</mat-icon>
 </header>
 
 <mat-dialog-content>
-    <form [formGroup]="receitaForm">
-        <app-seletor-imagem (fileEvent)="addFile($event)"></app-seletor-imagem>
-        <hr>
-        <div class="row">
-            <mat-form-field appearance="outline" class="col-12 col-sm-8">
-                <mat-label>{{ "nome" | translate }}</mat-label>
-                <input matInput type="text" id="nome" formControlName="nome">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="col-12 col-sm-4">
-                <mat-label>{{ "unidadeMedida" | translate }}</mat-label>
-                <input matInput type="text" id="unidadeMedida" formControlName="unidadeMedida">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="col-12 col-sm-4">
-                <mat-label>{{ "peso" | translate }}</mat-label>
-                <input matInput type="text" id="peso" formControlName="peso">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="col-12 col-sm-4">
-                <mat-label>{{ "kcal" | translate }}</mat-label>
-                <input matInput type="text" id="kcal" formControlName="kcal">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="col-12 col-sm-4">
-                <mat-label>{{ "valor" | translate }}</mat-label>
-                <input matInput type="text" id="valor" formControlName="valor">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="col-12">
-                <mat-label>{{ "descricao" | translate }}</mat-label>
-                <input matInput type="text" id="descricao" formControlName="descricao">
-            </mat-form-field>
+  <form [formGroup]="receitaForm">
+    <app-seletor-imagem (fileEvent)="addFile($event)"></app-seletor-imagem>
+    <hr>
+    <div class="row">
+      <mat-form-field appearance="outline" class="col-12 col-sm-8">
+        <mat-label>{{ "nome" | translate }}</mat-label>
+        <input matInput type="text" id="nome" formControlName="nome">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-12 col-sm-4">
+        <mat-label>{{ "valor" | translate }}</mat-label>
+        <input matInput type="text" id="valor" formControlName="valor">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-12">
+        <mat-label>{{ "descricao" | translate }}</mat-label>
+        <input matInput type="text" id="descricao" formControlName="descricao">
+      </mat-form-field>
+    </div>
+  </form>
+  <h3>{{ "ingredientes" | translate }}</h3>
+  <hr>
+  <div class="d-flex pb-3">
+    <mat-form-field class="col-12" appearance="outline">
+      <mat-label>Ingredientes</mat-label>
+      <input matInput aria-label="Ingrediente" [matAutocomplete]="ingredienteAuto" [(ngModel)]="buscaIngrediente"
+        (input)="onTyping(buscaIngrediente)" (focus)="buscarIngredientes(buscaIngrediente)">
+      <mat-autocomplete #ingredienteAuto="matAutocomplete" [displayWith]="displayFn"
+        (optionSelected)="adicionarIngrediente($event.option.value)">
+        <mat-option disabled *ngIf="loading">
+          <mat-progress-spinner class="mx-auto" mode="indeterminate" diameter="35"> </mat-progress-spinner>
+        </mat-option>
+        <mat-option *ngFor="let ingrediente of ingredientes" [value]="ingrediente">
+          <img class="rounded-circle me-2" aria-hidden [src]="ingrediente.imagem" height="25">
+          <span>{{ingrediente.nome}}</span> |
+          <small>Valor: {{ingrediente.valor}}</small>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <div class="span-row">
+    <span class="badge text-bg-dark px-2 pt-3" *ngFor="let ingrediente of receitaIngredientes; let i = index">
+      <div class="d-flex justify-content-betwen">
+        <div class="col-auto d-flex align-items-center">
+          <h3>{{ ingrediente.nome }}</h3>&nbsp;
+          <mat-form-field appearance="outline" [ngStyle]="{'width': '4rem'}">
+            <mat-label>{{ "quantidade" | translate }}</mat-label>
+            <input matInput type="text" id="valor" [(ngModel)]="ingrediente.quantidade">
+          </mat-form-field>
         </div>
-        <hr>
-        <div class="buttons-row d-flex justify-content-between">
-            <button mat-stroked-button class="light-button my-2">{{ "limpar" | translate }}</button>
-            <button mat-raised-button class="pink-button my-2">{{ "salvarProduto" | translate
-                }}</button>
+        <div class="col-auto">
+          <button mat-icon-button (click)="removerIngrediente(i)">
+            <mat-icon>cancel</mat-icon>
+          </button>
         </div>
-    </form>
+      </div>
+    </span>
+  </div>
+
+  <hr>
 </mat-dialog-content>
+
+<mat-dialog-actions class="buttons-row d-flex justify-content-between">
+  <button mat-stroked-button class="light-button my-2" (click)="limpar()">{{ "limpar" | translate }}</button>
+  <button mat-raised-button class="pink-button my-2">{{ "salvarProduto" | translate
+    }}</button>
+</mat-dialog-actions>

@@ -27,6 +27,7 @@
   "funcionario": "Funcionário",
   "indicesDeVendas": "Indices de venda",
   "ingrediente": "Ingrediente",
+  "ingredienteJaFoiSelecionado": "O ingrediente já foi selecionado!",
   "ingredientes": "Ingredientes",
   "ingredientesLower": "ingredientes",
   "inventario": "Inventário",

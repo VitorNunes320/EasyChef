@@ -66,18 +66,19 @@ th {
   color: $color-light !important;
 }
 
-mat-progress-spinner.spinner {
-  position: fixed;
-  z-index: 999;
-  overflow: show;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-
+mat-progress-spinner {
   circle {
-    stroke: $color-gold;
+    stroke: $color-gold !important;
+  }
+  &.spinner {
+    position: fixed;
+    z-index: 999;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 }
 

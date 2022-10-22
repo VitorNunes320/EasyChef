@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { SnackBarTheme } from "../../models/snackbar.theme.enum";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-snackbar",
@@ -8,7 +9,12 @@ import { SnackBarTheme } from "../../models/snackbar.theme.enum";
   styleUrls: ["./snackbar.component.scss"],
 })
 export class SnackbarComponent {
-  constructor(public snackBar: MatSnackBar) {}
+  constructor(
+    public snackBar: MatSnackBar,
+    public translate: TranslateService
+  ) {
+    this.translate.use("pt-br");
+  }
 
   public openSnackBar(
     message: string,
@@ -23,8 +29,8 @@ export class SnackbarComponent {
     } else {
       theme_new = "default_new";
     }
-
-    this.snackBar.open(message, "X", {
+    console.log(this.translate.instant(message));
+    this.snackBar.open(this.translate.instant(message), "X", {
       duration: duration || 8000,
       panelClass: [theme_new],
     });
