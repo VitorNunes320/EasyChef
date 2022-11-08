@@ -45,6 +45,8 @@
   "naoIniciado": "Not Started",
   "naoTemUmaConta": "Don't have an account?",
   "nenhumaDescricaoDisponivel": "No Description Available",
+  "nenhumaReceitaEncontrada": "No Recipes found!",
+  "nenhumIngredienteEncontrado": "No Ingredients Found!",
   "nome": "Name",
   "novaMesa": "New Table",
   "novaReceita": "New Recipe",

@@ -7,6 +7,7 @@ import {
   OptionModalModel,
 } from "src/app/modules/shared/models/option-dialog.model";
 import { OptionModalComponent } from "src/app/modules/shared/components/option-modal/option-modal.component";
+import { ReceitaService } from "../../services/receita.service";
 
 @Component({
   selector: "app-ingredientes",
@@ -18,50 +19,13 @@ export class IngredientesComponent implements OnInit {
   public quantidade: number = 15;
   public paginas: number = 15;
   public viewTipo: number = 0;
-  public ingredientes: Ingrediente[] = [
-    {
-      id: "1",
-      imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-      nome: "Farinha",
-      unidadeMedida: "kg",
-      descricao: "Farinha de trigo",
-      valor: 50,
-    },
-    {
-      id: "1",
-      imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-      nome: "Farinha",
-      unidadeMedida: "kg",
-      descricao: "Farinha de trigo",
-      valor: 50,
-    },
-    {
-      id: "1",
-      imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-      nome: "Farinha",
-      unidadeMedida: "kg",
-      descricao: "Farinha de trigo",
-      valor: 50,
-    },
-    {
-      id: "1",
-      imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-      nome: "Farinha",
-      unidadeMedida: "kg",
-      descricao: "Farinha de trigo",
-      valor: 50,
-    },
-    {
-      id: "1",
-      imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-      nome: "Farinha",
-      unidadeMedida: "kg",
-      descricao: "Farinha de trigo",
-      valor: 50,
-    },
-  ];
+  public ingredientes: Ingrediente[] = [];
+  public loading: boolean = false;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    public receitaService: ReceitaService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -115,6 +79,22 @@ export class IngredientesComponent implements OnInit {
       if (dialogResult == 1) {
         console.log(dialogResult);
       }
+    });
+  }
+
+  public getIngrediente(): void {
+    this.loading = true;
+    this.receitaService.getIngredientes("", 1, 15).subscribe({
+      next: (response) => {
+        this.ingredientes = response.dados.dados;
+        this.paginas = Math.ceil(response.dados.quantidade / this.quantidade);
+        this.loading = false;
+      },
+      error: () => {
+        this.ingredientes = [];
+        this.paginas = 0;
+        this.loading = false;
+      },
     });
   }
 }

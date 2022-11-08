@@ -4,6 +4,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { NovaReceitaModalComponent } from "../modals/nova-receita-modal/nova-receita-modal.component";
 import { OptionModalModel } from "src/app/modules/shared/models/option-dialog.model";
 import { OptionModalComponent } from "src/app/modules/shared/components/option-modal/option-modal.component";
+import { ReceitaService } from "../../services/receita.service";
 
 @Component({
   selector: "app-receita",
@@ -15,332 +16,17 @@ export class ReceitaComponent implements OnInit {
   public quantidade: number = 15;
   public paginas: number = 15;
   public viewTipo: number = 0;
-  public receitas: Receita[] = [
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-    {
-      id: "1",
-      nome: "Macarrão",
-      imagem: "https://i.imgur.com/tASMPby.jpeg",
-      descricao: "Macarrão",
-      ingredientes: [
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-        {
-          id: "1",
-          nome: "Farinha",
-          imagem: "https://i.imgur.com/wFNNWEj.jpeg",
-          valor: 50,
-          quantidade: 2,
-          unidadeMedida: "kg",
-        },
-      ],
-    },
-  ];
+  public receitas: Receita[] = [];
+  public loading: boolean = false;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    public receitaService: ReceitaService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getReceitas();
+  }
 
   public onPaginaChange(event: number): void {
     this.pagina = event;
@@ -392,6 +78,22 @@ export class ReceitaComponent implements OnInit {
       if (dialogResult == 1) {
         console.log(dialogResult);
       }
+    });
+  }
+
+  public getReceitas(): void {
+    this.loading = true;
+    this.receitaService.getReceitas("", 1, 15).subscribe({
+      next: (response) => {
+        this.receitas = response.dados.dados;
+        this.paginas = Math.ceil(response.dados.quantidade / this.quantidade);
+        this.loading = false;
+      },
+      error: () => {
+        this.receitas = [];
+        this.paginas = 0;
+        this.loading = false;
+      },
     });
   }
 }

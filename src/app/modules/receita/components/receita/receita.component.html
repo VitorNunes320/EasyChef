@@ -1,37 +1,46 @@
 <div class="row">
-    <div class="col-12 col-md-2">
-        <div class="main-title pb-3">{{ "receitas" | translate }}</div>
+  <div class="col-12 col-md-2">
+    <div class="main-title pb-3">{{ "receitas" | translate }}</div>
+  </div>
+  <div class="col-12 col-md-10">
+    <div class="row d-flex">
+      <div class="col-12 col-md-auto d-flex align-items-center flex-fill flex-row-reverse pb-2" id="button-col">
+        <button mat-stroked-button class="light-button" (click)="addReceita()">
+          {{ "adicionarReceita" | translate }}
+        </button>
+      </div>
+      <div class="col-12 col-md-auto pb-2">
+        <mat-button-toggle-group id="toggle-group">
+          <mat-button-toggle [checked]="viewTipo == 0" (change)="viewTipo = 0" aria-label="Text align left">
+            <mat-icon>grid_on</mat-icon> {{ "visualizarComoCards" | translate }}
+          </mat-button-toggle>
+          <mat-button-toggle [checked]="viewTipo == 1" (change)="viewTipo = 1" aria-label="Text align center">
+            <mat-icon> table_chart</mat-icon> {{ "visualizarComoTabela" | translate }}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
     </div>
-    <div class="col-12 col-md-10">
-        <div class="row d-flex">
-            <div class="col-12 col-md-auto d-flex align-items-center flex-fill flex-row-reverse pb-2" id="button-col">
-                <button mat-stroked-button class="light-button" (click)="addReceita()">
-                    {{ "adicionarReceita" | translate }}
-                </button>
-            </div>
-            <div class="col-12 col-md-auto pb-2">
-                <mat-button-toggle-group id="toggle-group">
-                    <mat-button-toggle [checked]="viewTipo == 0" (change)="viewTipo = 0" aria-label="Text align left">
-                        <mat-icon>grid_on</mat-icon> {{ "visualizarComoCards" | translate }}
-                    </mat-button-toggle>
-                    <mat-button-toggle [checked]="viewTipo == 1" (change)="viewTipo = 1" aria-label="Text align center">
-                        <mat-icon> table_chart</mat-icon> {{ "visualizarComoTabela" | translate }}
-                    </mat-button-toggle>
-                </mat-button-toggle-group>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 
 <div class="opacity-background rounded-1 p-3 mt-2">
+  <ng-container *ngIf="receitas.length > 0; else listaVaziaTemplate">
     <app-receita-card *ngIf="viewTipo == 0" [receitas]="receitas" (emitOpcao)="onOpcaoSelected($event)">
     </app-receita-card>
     <app-receita-tabela *ngIf="viewTipo == 1" [receitas]="receitas" (emitOpcao)="onOpcaoSelected($event)">
     </app-receita-tabela>
 
     <div class=" d-flex justify-content-center w-100">
-        <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
-            (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">
-        </app-paginator>
+      <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
+        (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">
+      </app-paginator>
     </div>
+  </ng-container>
+  <ng-template #listaVaziaTemplate>
+    <div class="text-center">
+      <strong>{{ "nenhumaReceitaEncontrada" | translate }}</strong>
+    </div>
+  </ng-template>
 </div>
+
+<mat-progress-spinner *ngIf="loading" class="spinner" [mode]="'indeterminate'"></mat-progress-spinner>
