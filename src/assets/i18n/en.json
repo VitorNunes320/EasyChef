@@ -45,6 +45,8 @@
   "naoIniciado": "Not Started",
   "naoTemUmaConta": "Don't have an account?",
   "nenhumaDescricaoDisponivel": "No Description Available",
+  "nenhumaMesaEncontrada": "No Tables found!",
+  "nenhumPedidoEncontrado": "No Orders found!",
   "nenhumaReceitaEncontrada": "No Recipes found!",
   "nenhumIngredienteEncontrado": "No Ingredients Found!",
   "nome": "Name",

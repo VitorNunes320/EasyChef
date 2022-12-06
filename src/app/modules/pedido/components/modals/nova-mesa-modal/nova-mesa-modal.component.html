@@ -18,8 +18,11 @@
         <hr>
         <div class="buttons-row d-flex justify-content-between">
             <button mat-stroked-button class="light-button my-2">{{ "limpar" | translate }}</button>
-            <button mat-raised-button class="pink-button my-2">{{ "salvarMesa" | translate
-                }}</button>
+            <button mat-raised-button class="pink-button my-2" [disabled]="mesaForm.invalid" (click)="addMesa()">
+                {{ "salvarMesa" | translate }}
+            </button>
         </div>
     </form>
 </mat-dialog-content>
+
+<mat-progress-spinner *ngIf="loading" class="spinner" [mode]="'indeterminate'"></mat-progress-spinner>

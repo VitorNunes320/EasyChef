@@ -13,12 +13,21 @@
 </div>
 
 <div class="opacity-background rounded-1 p-3 mt-2">
-  <app-pedidos-card *ngIf="viewTipo == 0" [pedidos]="pedidos"></app-pedidos-card>
-  <app-pedidos-tabela *ngIf="viewTipo == 1" [pedidos]="pedidos"></app-pedidos-tabela>
+  <ng-container *ngIf="pedidos.length > 0 else listaVaziaTemplate">
+    <app-pedidos-card *ngIf="viewTipo == 0" [pedidos]="pedidos"></app-pedidos-card>
+    <app-pedidos-tabela *ngIf="viewTipo == 1" [pedidos]="pedidos"></app-pedidos-tabela>
 
-  <div class="d-flex justify-content-center w-100">
-    <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
-      (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">
-    </app-paginator>
-  </div>
+    <div class="d-flex justify-content-center w-100">
+      <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
+        (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">
+      </app-paginator>
+    </div>
+  </ng-container>
+  <ng-template #listaVaziaTemplate>
+    <div class="text-center">
+      <strong>{{ "nenhumPedidoEncontrado" | translate }}</strong>
+    </div>
+  </ng-template>
 </div>
+
+<mat-progress-spinner *ngIf="loading" class="spinner" [mode]="'indeterminate'"></mat-progress-spinner>

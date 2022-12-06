@@ -23,6 +23,7 @@ import { MesasTabelaComponent } from "./components/mesas-tabela/mesas-tabela.com
 import { SharedModule } from "../shared/shared.module";
 import { MatDialogModule } from "@angular/material/dialog";
 import { NovaMesaModalComponent } from "./components/modals/nova-mesa-modal/nova-mesa-modal.component";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { NovaMesaModalComponent } from "./components/modals/nova-mesa-modal/nova
     MatInputModule,
     MatTableModule,
     MatButtonToggleModule,
+    MatProgressSpinnerModule,
     SharedModule,
     MatDialogModule,
     TranslateModule.forRoot({

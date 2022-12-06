@@ -71,11 +71,11 @@
                     {{ inventario.descricao ? inventario.descricao : "nenhumaDescricaoDisponivel" | translate }}
                 </small>
                 <hr>
-                <div class="d-flex flex-row-reverse">
-                    <button mat-raised-button class="pink-button table-button ms-2" (click)="selecionarOpcao(0)">
+                <div class="d-flex flex-wrap gap-1">
+                    <button mat-raised-button class="pink-button table-button flex-grow-1" (click)="selecionarOpcao(0)">
                         <mat-icon>delete</mat-icon> {{ 'remover' | translate }}
                     </button>
-                    <button mat-raised-button class="blue-button table-button ms-2" (click)="selecionarOpcao(1)">
+                    <button mat-raised-button class="blue-button table-button flex-grow-1" (click)="selecionarOpcao(1)">
                         <mat-icon>edit</mat-icon> {{ 'editar' | translate }}
                     </button>
                 </div>

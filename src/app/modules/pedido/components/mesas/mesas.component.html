@@ -22,11 +22,20 @@
 </div>
 
 <div class="opacity-background rounded-1 p-3 mt-2">
-  <app-mesas-card [mesas]="mesas" *ngIf="viewTipo == 0"></app-mesas-card>
-  <app-mesas-tabela [mesas]="mesas" *ngIf="viewTipo == 1"></app-mesas-tabela>
-  <div class="d-flex justify-content-center w-100">
-    <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
-      (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">
-    </app-paginator>
-  </div>
+  <ng-container *ngIf="mesas.length > 0; else listaVaziaTemplate">
+    <app-mesas-card [mesas]="mesas" *ngIf="viewTipo == 0"></app-mesas-card>
+    <app-mesas-tabela [mesas]="mesas" *ngIf="viewTipo == 1"></app-mesas-tabela>
+    <div class="d-flex justify-content-center w-100">
+      <app-paginator [pagina]="pagina" [quantidade]="quantidade" [paginas]="paginas"
+        (paginaEvent)="onPaginaChange($event)" (quantidadeEvent)="onQuantidadeChange($event)">
+      </app-paginator>
+    </div>
+  </ng-container>
+  <ng-template #listaVaziaTemplate>
+    <div class="text-center">
+      <strong>{{ "nenhumaMesaEncontrada" | translate }}</strong>
+    </div>
+  </ng-template>
 </div>
+
+<mat-progress-spinner *ngIf="loading" class="spinner" [mode]="'indeterminate'"></mat-progress-spinner>

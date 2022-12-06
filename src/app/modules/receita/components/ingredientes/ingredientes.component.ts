@@ -27,7 +27,9 @@ export class IngredientesComponent implements OnInit {
     public receitaService: ReceitaService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getIngredientes();
+  }
 
   public onPaginaChange(event: number): void {
     this.pagina = event;
@@ -82,7 +84,7 @@ export class IngredientesComponent implements OnInit {
     });
   }
 
-  public getIngrediente(): void {
+  public getIngredientes(): void {
     this.loading = true;
     this.receitaService.getIngredientes("", 1, 15).subscribe({
       next: (response) => {

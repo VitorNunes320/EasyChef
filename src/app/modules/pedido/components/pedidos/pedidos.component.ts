@@ -8,338 +8,20 @@ import { PedidoService } from "../../services/pedido.service";
   styleUrls: ["./pedidos.component.scss"],
 })
 export class PedidosComponent implements OnInit {
+  public loading: boolean = false;
   public pagina: number = 1;
   public quantidade: number = 15;
   public paginas: number = 15;
   public viewTipo: number = 0;
 
   @Output() emitPedidos: EventEmitter<Pedido[]> = new EventEmitter();
-  public pedidos: Pedido[] = [
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 0,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 0,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 3,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 2,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 1,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 2,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 1,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 3,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 2,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-    {
-      id: "",
-      codigo: "#1",
-      data: new Date(),
-      valorTotal: 50,
-      quantidadeItens: 4,
-      usuarioNome: "Vitor",
-      usuarioId: "",
-      vendedorNome: "Vitor",
-      vendedorId: "",
-      status: 1,
-      produtos: [
-        {
-          id: "1",
-          nome: "Hamburguer",
-          valor: 15,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-        {
-          id: "1",
-          nome: "Macarrão",
-          valor: 10,
-          quantidade: 2,
-        },
-      ],
-    },
-  ];
+  public pedidos: Pedido[] = [];
 
   constructor(private readonly pedidoService: PedidoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPedidos();
+  }
 
   public onPaginaChange(event: number): void {
     this.pagina = event;
@@ -347,5 +29,21 @@ export class PedidosComponent implements OnInit {
 
   public onQuantidadeChange(event: number): void {
     this.quantidade = event;
+  }
+
+  public getPedidos(): void {
+    this.loading = true;
+    this.pedidoService.getPedidos("", 1, 15).subscribe({
+      next: (response) => {
+        this.pedidos = response.dados.dados;
+        this.paginas = Math.ceil(response.dados.quantidade / this.quantidade);
+        this.loading = false;
+      },
+      error: () => {
+        this.pedidos = [];
+        this.paginas = 0;
+        this.loading = false;
+      },
+    });
   }
 }

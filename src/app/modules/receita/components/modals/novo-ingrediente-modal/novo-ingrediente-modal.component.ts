@@ -71,8 +71,6 @@ export class NovoIngredienteModalComponent implements OnInit {
   public cadastrarIngrediente(): void {
     this.ingrediente = this.ingredienteForm.value;
     this.ingrediente.unidadeMedidaId = this.unidadeMedidaId;
-    
-    console.log(this.ingrediente);
   }
 
   public limpar(): void {
